@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <!-- ========================
+       CONFIGURAÇÕES BÁSICAS
+  ========================= -->
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ========================
+       SEO BÁSICO
+  ========================= -->
+
+    <title>Estrutura Básica HTML | Dev Studies</title>
+    <meta
+      name="description"
+      content="Arquivo base de estrutura HTML5 com boas práticas, SEO e acessibilidade."
+    />
+    <meta name="author" content="Jorge Simões" />
+
+    <!-- Open Graph (prévia para redes sociais) -->
+    <meta property="og:title" content="Estrutura Básica HTML" />
+    <meta
+      property="og:description"
+      content="Modelo completo de estrutura HTML5."
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- ========================
+       FAVICON
+  ========================= -->
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- ========================
+       CSS EXTERNO
+  ========================= -->
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- ========================
+       ACESSIBILIDADE
+  ========================= -->
+
+    <a href="#main-content" class="skip-link"
+      >Pular para o conteúdo principal</a
+    >
+
+    <!-- ========================
+       HEADER
+  ========================= -->
+
+    <header>
+      <h1>Dev Studies - Estrutura Básica</h1>
+      <nav aria-label="Navegação principal">
+        <ul>
+          <li><a href="#">Início</a></li>
+          <li><a href="#">Sobre</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ========================
+       CONTEÚDO PRINCIPAL
+  ========================= -->
+
+    <main id="main-content">
+      <section>
+        <h2>Seção Principal</h2>
+        <p>
+          Este documento demonstra a estrutura base recomendada para qualquer
+          projeto HTML5 moderno.
+        </p>
+      </section>
+
+      <article>
+        <h2>Exemplo de Artigo</h2>
+        <p>
+          O uso de tags semânticas melhora acessibilidade, SEO e organização do
+          código.
+        </p>
+      </article>
+    </main>
+
+    <!-- ========================
+       ASIDE
+  ========================= -->
+
+    <aside>
+      <h2>Informações adicionais</h2>
+      <p>Conteúdo complementar ou anúncios.</p>
+    </aside>
+
+    <!-- ========================
+       FOOTER
+  ========================= -->
+
+    <footer>
+      <p>&copy; 2026 Jorge Simões. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- ========================
+       JS NO FINAL (boa prática)
+  ========================= -->
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
