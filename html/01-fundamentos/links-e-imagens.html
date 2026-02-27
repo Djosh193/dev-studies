@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Estudo sobre uso de links e imagens no HTML">
+    <meta name="author" content="Jorge Simões">
+    <title>Links e Imagens | Dev Studies</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>📎 Links e 🖼️ Imagens no HTML</h1>
+        <p>Arquivo de estudo sobre a utilização de âncoras e imagens.</p>
+        <hr>
+    </header>
+
+    <main>
+
+        <!-- ========================= -->
+        <!-- LINKS -->
+        <!-- ========================= -->
+
+        <section>
+            <h2>🔗 Trabalhando com Links</h2>
+
+            <h3>1. Link externo</h3>
+            <a href="https://www.google.com" target="_blank">
+                Acessar Google (abre em nova aba)
+            </a>
+
+            <h3>2. Link interno (mesma página)</h3>
+            <p>
+                <a href="#secao-imagens">Ir para a seção de imagens</a>
+            </p>
+
+            <h3>3. Link para e-mail</h3>
+            <a href="mailto:seuemail@email.com">
+                Enviar e-mail
+            </a>
+
+            <h3>4. Link para telefone</h3>
+            <a href="tel:+5582999999999">
+                Ligar agora
+            </a>
+
+            <h3>5. Download de arquivo</h3>
+            <a href="arquivo-exemplo.pdf" download>
+                Baixar PDF
+            </a>
+        </section>
+
+        <hr>
+
+        <!-- ========================= -->
+        <!-- IMAGENS -->
+        <!-- ========================= -->
+
+        <section id="secao-imagens">
+            <h2>🖼️ Trabalhando com Imagens</h2>
+
+            <h3>1. Imagem básica</h3>
+            <img 
+                src="https://via.placeholder.com/300"
+                alt="Imagem de exemplo"
+                width="300"
+            >
+
+            <h3>2. Imagem com título</h3>
+            <img 
+                src="https://via.placeholder.com/200"
+                alt="Imagem ilustrativa"
+                title="Imagem com atributo title"
+            >
+
+            <h3>3. Imagem com legenda</h3>
+            <figure>
+                <img 
+                    src="https://via.placeholder.com/250"
+                    alt="Imagem com legenda"
+                >
+                <figcaption>Legenda da imagem usando figure e figcaption.</figcaption>
+            </figure>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <hr>
+        <p>Dev Studies - HTML Estrutura Básica</p>
+    </footer>
+
+</body>
+</html>
