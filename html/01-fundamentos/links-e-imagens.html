@@ -1,96 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Estudo sobre uso de links e imagens no HTML">
-    <meta name="author" content="Jorge Simões">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Estudo sobre uso de links e imagens no HTML"
+    />
+    <meta name="author" content="Jorge Simões" />
     <title>Links e Imagens | Dev Studies</title>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header>
-        <h1>📎 Links e 🖼️ Imagens no HTML</h1>
-        <p>Arquivo de estudo sobre a utilização de âncoras e imagens.</p>
-        <hr>
+      <h1>📎 Links e 🖼️ Imagens no HTML</h1>
+      <p>Arquivo de estudo sobre a utilização de âncoras e imagens.</p>
+      <hr />
     </header>
 
     <main>
+      <!-- ========================= -->
+      <!-- LINKS -->
+      <!-- ========================= -->
 
-        <!-- ========================= -->
-        <!-- LINKS -->
-        <!-- ========================= -->
+      <section>
+        <h2>🔗 Trabalhando com Links</h2>
 
-        <section>
-            <h2>🔗 Trabalhando com Links</h2>
+        <h3>1. Link externo</h3>
+        <a href="https://www.google.com" target="_blank">
+          Acessar Google (abre em nova aba)
+        </a>
 
-            <h3>1. Link externo</h3>
-            <a href="https://www.google.com" target="_blank">
-                Acessar Google (abre em nova aba)
-            </a>
+        <h3>2. Link interno (mesma página)</h3>
+        <p>
+          <a href="#secao-imagens">Ir para a seção de imagens</a>
+        </p>
 
-            <h3>2. Link interno (mesma página)</h3>
-            <p>
-                <a href="#secao-imagens">Ir para a seção de imagens</a>
-            </p>
+        <h3>3. Link para e-mail</h3>
+        <a href="mailto:seuemail@email.com"> Enviar e-mail </a>
 
-            <h3>3. Link para e-mail</h3>
-            <a href="mailto:seuemail@email.com">
-                Enviar e-mail
-            </a>
+        <h3>4. Link para telefone</h3>
+        <a href="tel:+5582999999999"> Ligar agora </a>
 
-            <h3>4. Link para telefone</h3>
-            <a href="tel:+5582999999999">
-                Ligar agora
-            </a>
+        <h3>5. Download de arquivo</h3>
+        <a href="arquivo-exemplo.pdf" download> Baixar PDF </a>
+      </section>
 
-            <h3>5. Download de arquivo</h3>
-            <a href="arquivo-exemplo.pdf" download>
-                Baixar PDF
-            </a>
-        </section>
+      <hr />
 
-        <hr>
+      <!-- ========================= -->
+      <!-- IMAGENS -->
+      <!-- ========================= -->
 
-        <!-- ========================= -->
-        <!-- IMAGENS -->
-        <!-- ========================= -->
+      <section id="secao-imagens">
+        <h2>🖼️ Trabalhando com Imagens</h2>
 
-        <section id="secao-imagens">
-            <h2>🖼️ Trabalhando com Imagens</h2>
+        <h3>1. Imagem básica</h3>
+        <img
+          src="https://media.istockphoto.com/id/157373207/pt/foto/pedras-seixo-de-equil%C3%ADbrio-numa-praia-durante-o-p%C3%B4r-do-sol.jpg?s=612x612&w=0&k=20&c=Dr0EC4zTDog__QLGwDyadphWXZCDyzx_FXAeis1iKkM="
+          alt="Imagem de exemplo"
+          width="300"
+        />
 
-            <h3>1. Imagem básica</h3>
-            <img 
-                src="https://via.placeholder.com/300"
-                alt="Imagem de exemplo"
-                width="300"
-            >
+        <h3>2. Imagem com título</h3>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWpR7f-ayu9epqt5LQz7KvmpjtyfZJoj2uACObPZe8KA&s"
+          alt="Tigre"
+          title="Tigre"
+        />
 
-            <h3>2. Imagem com título</h3>
-            <img 
-                src="https://via.placeholder.com/200"
-                alt="Imagem ilustrativa"
-                title="Imagem com atributo title"
-            >
-
-            <h3>3. Imagem com legenda</h3>
-            <figure>
-                <img 
-                    src="https://via.placeholder.com/250"
-                    alt="Imagem com legenda"
-                >
-                <figcaption>Legenda da imagem usando figure e figcaption.</figcaption>
-            </figure>
-
-        </section>
-
+        <h3>3. Imagem com legenda</h3>
+        <figure>
+          <img
+            src="data:image/jpeg;base64,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"
+            alt="Praia"
+          />
+          <figcaption>
+            Praia. (Legenda da imagem usando figure e figcaption).
+          </figcaption>
+        </figure>
+      </section>
     </main>
 
     <footer>
-        <hr>
-        <p>Dev Studies - HTML Estrutura Básica</p>
+      <hr />
+      <p>Dev Studies - HTML Estrutura Básica</p>
     </footer>
-
-</body>
+  </body>
 </html>
