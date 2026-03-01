@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Formulário completo com boas práticas de HTML5, acessibilidade e validações"
+    />
+    <meta name="author" content="Jorge Simões" />
+    <title>Formulário Completo - Dev Studies</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 40px;
+        background-color: #f4f4f4;
+        line-height: 1.6;
+      }
+
+      h1,
+      h2 {
+        color: #333;
+      }
+
+      form {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 8px;
+        max-width: 700px;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      }
+
+      fieldset {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      legend {
+        font-weight: bold;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 2px solid #4caf50;
+        border-color: #4caf50;
+      }
+
+      input:invalid {
+        border: 2px solid #e74c3c;
+      }
+
+      input:valid {
+        border: 2px solid #2ecc71;
+      }
+
+      .inline {
+        display: inline-block;
+        width: auto;
+        margin-right: 15px;
+        font-weight: normal;
+      }
+
+      .required {
+        color: red;
+      }
+
+      small {
+        font-size: 0.85rem;
+        color: #555;
+      }
+
+      button {
+        margin-top: 25px;
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      footer {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Formulário Completo com Boas Práticas</h1>
+      <p>
+        Exemplo integrando acessibilidade, validações nativas do HTML5,
+        organização semântica e diversos tipos de input.
+      </p>
+    </header>
+
+    <main>
+      <form action="#" method="post">
+        <fieldset>
+          <legend>Dados Pessoais</legend>
+
+          <label for="nome">
+            Nome Completo <span class="required">*</span>
+          </label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            required
+            minlength="3"
+            maxlength="60"
+          />
+          <small>Mínimo 3 caracteres.</small>
+
+          <label for="email"> Email <span class="required">*</span> </label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="senha"> Senha <span class="required">*</span> </label>
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            required
+            minlength="6"
+          />
+
+          <label for="idade">Idade (18 a 65)</label>
+          <input type="number" id="idade" name="idade" min="18" max="65" />
+
+          <label for="dataNascimento">Data de Nascimento</label>
+          <input type="date" id="dataNascimento" name="dataNascimento" />
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferências</legend>
+
+          <label>Gênero</label>
+          <label class="inline">
+            <input type="radio" name="genero" value="masculino" />
+            Masculino
+          </label>
+          <label class="inline">
+            <input type="radio" name="genero" value="feminino" />
+            Feminino
+          </label>
+
+          <label>Interesses</label>
+          <label class="inline">
+            <input type="checkbox" name="interesses" value="html" />
+            HTML
+          </label>
+          <label class="inline">
+            <input type="checkbox" name="interesses" value="css" />
+            CSS
+          </label>
+          <label class="inline">
+            <input type="checkbox" name="interesses" value="javascript" />
+            JavaScript
+          </label>
+
+          <label for="corFavorita">Cor Favorita</label>
+          <input type="color" id="corFavorita" name="corFavorita" />
+
+          <label for="nivel">Nível de Satisfação</label>
+          <input
+            type="range"
+            id="nivel"
+            name="nivel"
+            min="0"
+            max="10"
+            step="1"
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Contato</legend>
+
+          <label for="telefone">Telefone (99999-9999)</label>
+          <input
+            type="text"
+            id="telefone"
+            name="telefone"
+            pattern="[0-9]{5}-[0-9]{4}"
+          />
+          <small>Formato esperado: 99999-9999</small>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea
+            id="mensagem"
+            name="mensagem"
+            maxlength="300"
+            rows="4"
+          ></textarea>
+        </fieldset>
+
+        <button type="submit">Enviar Formulário</button>
+      </form>
+    </main>
+
+    <footer>
+      <hr />
+      <p>
+        Projeto educacional desenvolvido por Jorge Simões. Repositório:
+        dev-studies.
+      </p>
+    </footer>
+  </body>
+</html>

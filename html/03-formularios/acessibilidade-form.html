@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Estudo sobre acessibilidade em formulários HTML - Dev Studies"
+    />
+    <meta name="author" content="Jorge Simões" />
+    <title>Acessibilidade em Formulários</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 40px;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+      }
+
+      h1,
+      h2 {
+        color: #333;
+      }
+
+      form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        max-width: 500px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+      }
+
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 3px solid #4caf50;
+        border-color: #4caf50;
+      }
+
+      .required {
+        color: red;
+      }
+
+      .hint {
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      button {
+        margin-top: 20px;
+        background-color: #4caf50;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      fieldset {
+        margin-top: 20px;
+        padding: 15px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+      }
+
+      legend {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Acessibilidade em Formulários HTML</h1>
+      <p>
+        Este documento demonstra boas práticas de acessibilidade em formulários,
+        utilizando recursos semânticos e atributos que melhoram a experiência
+        para leitores de tela e navegação por teclado.
+      </p>
+    </header>
+
+    <main>
+      <section>
+        <h2>Boas Práticas Aplicadas</h2>
+        <ul>
+          <li>
+            Uso correto da tag <code>&lt;label&gt;</code> associada ao
+            <code>for</code>.
+          </li>
+          <li>Uso do atributo <code>aria-describedby</code>.</li>
+          <li>
+            Uso de <code>fieldset</code> e <code>legend</code> para agrupar
+            campos.
+          </li>
+          <li>Indicação clara de campos obrigatórios.</li>
+          <li>Estados de foco visíveis para navegação por teclado.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Exemplo de Formulário Acessível</h2>
+
+        <form action="#" method="post">
+          <label for="nome">
+            Nome Completo <span class="required">*</span>
+          </label>
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            required
+            aria-required="true"
+          />
+
+          <label for="email"> Email <span class="required">*</span> </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            aria-required="true"
+            aria-describedby="emailHint"
+          />
+          <div id="emailHint" class="hint">Exemplo: seuemail@dominio.com</div>
+
+          <fieldset>
+            <legend>Preferência de Contato</legend>
+
+            <label>
+              <input type="radio" name="contato" value="email" />
+              Email
+            </label>
+
+            <label>
+              <input type="radio" name="contato" value="telefone" />
+              Telefone
+            </label>
+          </fieldset>
+
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+
+          <button type="submit">Enviar Formulário</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <p>
+        Projeto educacional desenvolvido por Jorge Simões. Repositório:
+        dev-studies.
+      </p>
+    </footer>
+  </body>
+</html>
