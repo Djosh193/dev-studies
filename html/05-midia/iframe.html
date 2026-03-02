@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Jorge Simões" />
+    <meta
+      name="description"
+      content="Exemplo de uso da tag iframe em HTML - Dev Studies"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iframe | Dev Studies</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+        background-color: #f4f6f9;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      section {
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      iframe {
+        width: 100%;
+        max-width: 800px;
+        height: 400px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        margin-top: 10px;
+      }
+
+      code {
+        background-color: #eef1f5;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Tag Iframe em HTML</h1>
+    <p>
+      A tag <code>&lt;iframe&gt;</code> permite incorporar outro documento HTML
+      dentro da página atual.
+    </p>
+
+    <!-- ========================= -->
+    <!-- Exemplo 1 - Site Externo -->
+    <!-- ========================= -->
+
+    <section>
+      <h2>1. Incorporando um Site</h2>
+      <p>Exemplo básico incorporando um site externo:</p>
+
+      <iframe
+        src="https://developer.mozilla.org"
+        title="MDN Web Docs"
+        loading="lazy"
+      >
+      </iframe>
+
+      <p>
+        <strong>Observação:</strong> Alguns sites bloqueiam incorporação por
+        segurança (X-Frame-Options).
+      </p>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Exemplo 2 - YouTube -->
+    <!-- ========================= -->
+
+    <section>
+      <h2>2. Incorporando um Vídeo do YouTube</h2>
+      <p>Exemplo de vídeo incorporado:</p>
+
+      <iframe
+        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        title="Vídeo do YouTube"
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Exemplo 3 - Página Local -->
+    <!-- ========================= -->
+
+    <section>
+      <h2>3. Incorporando Página Local</h2>
+      <p>Exemplo carregando uma página interna do projeto:</p>
+
+      <iframe src="../04-tabelas/tabela-simples.html" title="Tabela Simples">
+      </iframe>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Boas Práticas -->
+    <!-- ========================= -->
+
+    <section>
+      <h2>Boas Práticas</h2>
+      <ul>
+        <li>Utilizar o atributo <code>title</code> para acessibilidade.</li>
+        <li>Evitar incorporar sites não confiáveis.</li>
+        <li>Utilizar <code>loading="lazy"</code> para melhor performance.</li>
+        <li>Ter cuidado com políticas de segurança (CSP e X-Frame-Options).</li>
+      </ul>
+    </section>
+  </body>
+</html>

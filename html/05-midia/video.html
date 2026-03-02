@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Jorge Simões" />
+    <meta
+      name="description"
+      content="Exemplo de uso da tag video em HTML - Dev Studies"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video | Dev Studies</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+        background-color: #f4f6f9;
+      }
+
+      h1 {
+        margin-bottom: 10px;
+      }
+
+      section {
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      }
+
+      video {
+        width: 100%;
+        max-width: 800px;
+        border-radius: 8px;
+        margin-top: 10px;
+        background-color: #000;
+      }
+
+      code {
+        background-color: #eef1f5;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Tag Video em HTML</h1>
+    <p>
+      A tag <code>&lt;video&gt;</code> permite incorporar vídeos diretamente na
+      página.
+    </p>
+
+    <!-- ========================= -->
+    <!-- Exemplo 1 - Uso Básico -->
+    <!-- ========================= -->
+
+    <section>
+      <h2>1. Exemplo Básico</h2>
+
+      <video controls>
+        <source src="../../assets/video/exemplo.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Exemplo 2 - Poster + múltiplos formatos -->
+    <!-- ========================= -->
+
+    <section>
+      <h2>2. Poster e Múltiplos Formatos</h2>
+
+      <video controls poster="../../assets/img/capa-video.jpg">
+        <source src="../../assets/video/exemplo.mp4" type="video/mp4" />
+        <source src="../../assets/video/exemplo.webm" type="video/webm" />
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+
+      <p>
+        O atributo <code>poster</code> define a imagem exibida antes do vídeo
+        iniciar.
+      </p>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Exemplo 3 - Loop e Muted -->
+    <!-- ========================= -->
+
+    <section>
+      <h2>3. Loop e Muted</h2>
+
+      <video controls loop muted>
+        <source src="../../assets/video/exemplo.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+
+      <p>
+        <code>loop</code> faz o vídeo repetir automaticamente.<br />
+        <code>muted</code> inicia o vídeo sem som.
+      </p>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Exemplo 4 - Legendas -->
+    <!-- ========================= -->
+
+    <section>
+      <h2>4. Legendas (Acessibilidade)</h2>
+
+      <video controls>
+        <source src="../../assets/video/exemplo.mp4" type="video/mp4" />
+        <track
+          src="../../assets/video/legenda.vtt"
+          kind="subtitles"
+          srclang="pt-BR"
+          label="Português"
+          default
+        />
+        Seu navegador não suporta vídeo HTML5.
+      </video>
+
+      <p>
+        A tag <code>&lt;track&gt;</code> permite adicionar legendas e melhorar a
+        acessibilidade.
+      </p>
+    </section>
+
+    <!-- ========================= -->
+    <!-- Boas Práticas -->
+    <!-- ========================= -->
+
+    <section>
+      <h2>Boas Práticas</h2>
+      <ul>
+        <li>Evite <code>autoplay</code> com som ativado.</li>
+        <li>Use múltiplos formatos (mp4, webm).</li>
+        <li>Inclua legendas com <code>&lt;track&gt;</code>.</li>
+        <li>Utilize <code>poster</code> para melhor UX.</li>
+        <li>Organize arquivos em <code>assets/video</code>.</li>
+      </ul>
+    </section>
+  </body>
+</html>
