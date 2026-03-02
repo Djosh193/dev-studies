@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Jorge Simões" />
+    <meta
+      name="description"
+      content="Exemplo de tabela simples em HTML - Dev Studies"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabela Simples | Dev Studies</title>
+
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+      }
+
+      h1 {
+        margin-bottom: 20px;
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 600px;
+      }
+
+      th,
+      td {
+        border: 1px solid #333;
+        padding: 8px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      tr:nth-child(even) {
+        background-color: #fafafa;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Tabela Simples</h1>
+
+    <p>Exemplo básico de tabela utilizando as principais tags:</p>
+    <ul>
+      <li>&lt;table&gt;</li>
+      <li>&lt;tr&gt;</li>
+      <li>&lt;th&gt;</li>
+      <li>&lt;td&gt;</li>
+    </ul>
+
+    <table>
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+        <th>Profissão</th>
+      </tr>
+      <tr>
+        <td>Jorge</td>
+        <td>33</td>
+        <td>Desenvolvedor</td>
+      </tr>
+      <tr>
+        <td>Ana</td>
+        <td>29</td>
+        <td>Designer</td>
+      </tr>
+      <tr>
+        <td>Carlos</td>
+        <td>35</td>
+        <td>Engenheiro</td>
+      </tr>
+    </table>
+  </body>
+</html>
