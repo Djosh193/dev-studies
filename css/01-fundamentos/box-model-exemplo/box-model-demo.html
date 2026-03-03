@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model — content-box vs border-box</title>
+    <link rel="stylesheet" href="./box-model-demo.css" />
+  </head>
+
+  <body>
+    <header class="top">
+      <h1>Box Model na prática</h1>
+      <p>
+        Comparação entre <strong>content-box</strong> (padrão) e
+        <strong>border-box</strong> (recomendado).
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>Mesma largura declarada: <code>width: 320px</code></h2>
+        <p class="hint">
+          Ambos têm <code>padding: 24px</code> e <code>border: 8px</code>, mas o
+          resultado final muda.
+        </p>
+
+        <div class="grid">
+          <article class="example">
+            <h3>❌ Padrão (content-box)</h3>
+            <p class="desc">
+              O <code>width</code> vale só para o <strong>conteúdo</strong>. O
+              padding e a borda somam no tamanho final.
+            </p>
+
+            <div class="ruler">
+              <span>320px (referência)</span>
+            </div>
+
+            <div class="box box--content">
+              <strong>content-box</strong>
+              <small>
+                width: 320px<br />
+                padding: 24px<br />
+                border: 8px
+              </small>
+            </div>
+
+            <p class="calc">
+              Tamanho total =
+              <code>320 + (24*2) + (8*2) = 384px</code>
+            </p>
+          </article>
+
+          <article class="example">
+            <h3>✅ Recomendado (border-box)</h3>
+            <p class="desc">
+              O <code>width</code> inclui
+              <strong>conteúdo + padding + borda</strong>. O elemento respeita
+              exatamente os 320px.
+            </p>
+
+            <div class="ruler">
+              <span>320px (referência)</span>
+            </div>
+
+            <div class="box box--border">
+              <strong>border-box</strong>
+              <small>
+                width: 320px<br />
+                padding: 24px<br />
+                border: 8px
+              </small>
+            </div>
+
+            <p class="calc">Tamanho total = <code>320px</code></p>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Extras rápidos</h2>
+        <div class="extras">
+          <div class="mini">
+            <h3>Margin (fora da caixa)</h3>
+            <div class="mini-box margin-demo">Tenho margin</div>
+          </div>
+
+          <div class="mini">
+            <h3>Padding (dentro da caixa)</h3>
+            <div class="mini-box padding-demo">Tenho padding</div>
+          </div>
+
+          <div class="mini">
+            <h3>Overflow</h3>
+            <div class="mini-box overflow-demo">
+              Texto grande pra forçar overflow. Texto grande pra forçar
+              overflow. Texto grande pra forçar overflow. Texto grande pra
+              forçar overflow.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Abra o DevTools → inspecione as caixas → veja o painel “Box Model”.
+    </footer>
+  </body>
+</html>
