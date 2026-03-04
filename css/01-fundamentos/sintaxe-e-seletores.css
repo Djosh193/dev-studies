@@ -1,0 +1,356 @@
+/* =========================================================
+   ARQUIVO: sintaxe-e-seletores.css
+   DIRETÓRIO: css/01-fundamentos
+   REPOSITÓRIO: dev-studies
+
+   Autor: Jorge Simões
+
+   Descrição:
+   Este arquivo demonstra a sintaxe básica do CSS e os
+   principais tipos de seletores utilizados no desenvolvimento web.
+
+   Conteúdo abordado:
+   • Sintaxe do CSS
+   • Seletores de elemento
+   • Seletores de classe
+   • Seletores de id
+   • Agrupamento de seletores
+   • Seletores descendentes
+   • Seletores filhos
+   • Seletores de irmãos
+   • Seletores de atributo
+   • Pseudo-classes
+   • Pseudo-elementos
+   • Combinações de seletores
+========================================================= */
+
+/* =========================================================
+   1️⃣ SINTAXE BÁSICA DO CSS
+========================================================= */
+
+/*
+Estrutura básica de uma regra CSS:
+
+seletor {
+    propriedade: valor;
+}
+
+Exemplo:
+*/
+
+h1 {
+  color: blue;
+  font-size: 32px;
+}
+
+/*
+Componentes de uma regra CSS:
+
+h1        → seletor
+color     → propriedade
+blue      → valor
+;         → final da declaração
+{}        → bloco de declarações
+*/
+
+/* =========================================================
+   2️⃣ SELETOR UNIVERSAL
+========================================================= */
+
+/*
+Seleciona TODOS os elementos da página.
+Muito usado para reset ou box model.
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   3️⃣ SELETOR DE ELEMENTO (TAG)
+========================================================= */
+
+/*
+Seleciona todos os elementos com aquela tag.
+*/
+
+p {
+  color: #333;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+/* =========================================================
+   4️⃣ SELETOR DE CLASSE
+========================================================= */
+
+/*
+Seleciona todos os elementos que possuem
+uma determinada classe.
+
+Sintaxe: .classe
+*/
+
+.card {
+  border: 1px solid #ccc;
+  padding: 16px;
+}
+
+.botao {
+  background-color: blue;
+  color: white;
+}
+
+/* =========================================================
+   5️⃣ SELETOR DE ID
+========================================================= */
+
+/*
+Seleciona um elemento específico pelo ID.
+
+Sintaxe: #id
+
+OBS:
+ID deve ser único na página.
+*/
+
+#header {
+  background-color: black;
+  color: white;
+}
+
+/* =========================================================
+   6️⃣ AGRUPAMENTO DE SELETORES
+========================================================= */
+
+/*
+Permite aplicar o mesmo estilo para
+vários seletores ao mesmo tempo.
+*/
+
+h1,
+h2,
+h3 {
+  font-family: Arial, sans-serif;
+}
+
+/* =========================================================
+   7️⃣ SELETOR DESCENDENTE
+========================================================= */
+
+/*
+Seleciona elementos dentro de outros.
+
+Sintaxe:
+elemento elemento
+*/
+
+article p {
+  color: #555;
+}
+
+/* =========================================================
+   8️⃣ SELETOR FILHO DIRETO
+========================================================= */
+
+/*
+Seleciona apenas filhos diretos.
+
+Sintaxe:
+elemento > elemento
+*/
+
+nav > ul {
+  list-style: none;
+}
+
+/* =========================================================
+   9️⃣ SELETOR DE IRMÃO ADJACENTE
+========================================================= */
+
+/*
+Seleciona o elemento que vem
+logo após outro.
+
+Sintaxe:
+elemento + elemento
+*/
+
+h2 + p {
+  font-weight: bold;
+}
+
+/* =========================================================
+   🔟 SELETOR DE IRMÃOS GERAIS
+========================================================= */
+
+/*
+Seleciona todos os irmãos
+que aparecem depois.
+
+Sintaxe:
+elemento ~ elemento
+*/
+
+h2 ~ p {
+  color: gray;
+}
+
+/* =========================================================
+   11️⃣ SELETOR DE ATRIBUTO
+========================================================= */
+
+/*
+Seleciona elementos com determinado atributo.
+*/
+
+input[type="text"] {
+  border: 1px solid #ccc;
+}
+
+input[type="password"] {
+  border: 1px solid red;
+}
+
+/* =========================================================
+   12️⃣ SELETOR DE ATRIBUTO PARCIAL
+========================================================= */
+
+/*
+^= começa com
+$= termina com
+*= contém
+*/
+
+a[href^="https"] {
+  color: green;
+}
+
+a[href$=".pdf"] {
+  color: red;
+}
+
+a[href*="github"] {
+  font-weight: bold;
+}
+
+/* =========================================================
+   13️⃣ PSEUDO-CLASSES
+========================================================= */
+
+/*
+Representam estados do elemento.
+*/
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: orange;
+}
+
+a:visited {
+  color: purple;
+}
+
+input:focus {
+  outline: 2px solid blue;
+}
+
+/* =========================================================
+   14️⃣ PSEUDO-CLASSES DE ESTRUTURA
+========================================================= */
+
+li:first-child {
+  color: blue;
+}
+
+li:last-child {
+  color: red;
+}
+
+li:nth-child(2) {
+  font-weight: bold;
+}
+
+/* =========================================================
+   15️⃣ PSEUDO-ELEMENTOS
+========================================================= */
+
+/*
+Selecionam partes do elemento.
+*/
+
+p::first-letter {
+  font-size: 200%;
+}
+
+p::first-line {
+  font-weight: bold;
+}
+
+::selection {
+  background-color: yellow;
+}
+
+/* =========================================================
+   16️⃣ COMBINAÇÃO DE SELETORES
+========================================================= */
+
+/*
+Podemos combinar vários seletores.
+*/
+
+.card p {
+  font-size: 14px;
+}
+
+.card .titulo {
+  font-weight: bold;
+}
+
+#menu li a {
+  text-decoration: none;
+}
+
+/* =========================================================
+   17️⃣ ESPECIFICIDADE (CONCEITO)
+========================================================= */
+
+/*
+Ordem de prioridade:
+
+1️⃣ !important
+2️⃣ ID (#)
+3️⃣ Classe (.)
+4️⃣ Elemento (tag)
+
+Exemplo:
+*/
+
+p {
+  color: blue;
+}
+
+.texto {
+  color: green;
+}
+
+#principal {
+  color: red;
+}
+
+/* =========================================================
+   18️⃣ BOAS PRÁTICAS
+========================================================= */
+
+/*
+✔ Prefira classes ao invés de IDs
+✔ Evite seletores muito específicos
+✔ Organize o CSS por seções
+✔ Comente seu código
+✔ Use nomes de classe claros
+*/

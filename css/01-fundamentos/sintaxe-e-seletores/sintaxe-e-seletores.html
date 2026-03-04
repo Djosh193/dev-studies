@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jorge Simões" />
+    <title>Sintaxe e Seletores — Dev Studies</title>
+    <link rel="stylesheet" href="./sintaxe-e-seletores.css" />
+  </head>
+
+  <body>
+    <header id="header" class="top">
+      <div class="container">
+        <h1>Sintaxe e Seletores no CSS</h1>
+        <p class="subtitle">
+          Exemplos visuais de: tag, classe, id, agrupamento, combinadores,
+          atributos, pseudo-classes e pseudo-elementos.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- 1) Sintaxe + seletores básicos -->
+      <section class="card" aria-labelledby="basicos">
+        <h2 id="basicos">1) Seletores básicos</h2>
+
+        <div class="grid">
+          <article class="demo">
+            <h3>Seletor de TAG</h3>
+            <p class="desc">
+              O CSS estiliza todas as tags <code>p</code> e <code>h3</code>.
+            </p>
+
+            <div class="box">
+              <h3>Sou um H3 (tag)</h3>
+              <p>Eu sou um parágrafo (tag p).</p>
+              <p>Outro parágrafo (tag p).</p>
+            </div>
+          </article>
+
+          <article class="demo">
+            <h3>Seletor de CLASSE</h3>
+            <p class="desc">
+              O CSS estiliza qualquer elemento com <code>.card-alvo</code>.
+            </p>
+
+            <div class="box">
+              <div class="card-alvo">Sou uma div com .card-alvo</div>
+              <p class="card-alvo">Sou um p com .card-alvo</p>
+              <button class="botao">Botão com .botao</button>
+            </div>
+          </article>
+
+          <article class="demo">
+            <h3>Seletor de ID</h3>
+            <p class="desc">
+              O CSS estiliza o elemento com <code>#destaque</code> (único).
+            </p>
+
+            <div class="box">
+              <p id="destaque">Eu sou o #destaque</p>
+              <p>Eu não sou o destaque.</p>
+            </div>
+          </article>
+
+          <article class="demo">
+            <h3>Agrupamento ( , )</h3>
+            <p class="desc">
+              O CSS aplica estilo em <code>h4</code>, <code>kbd</code> e
+              <code>mark</code> ao mesmo tempo.
+            </p>
+
+            <div class="box">
+              <h4>Sou um H4</h4>
+              <p>Atalho: <kbd>Ctrl</kbd> + <kbd>S</kbd></p>
+              <p><mark>Texto destacado</mark> com mark</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 2) Combinadores -->
+      <section class="card" aria-labelledby="combinadores">
+        <h2 id="combinadores">2) Combinadores de seletores</h2>
+
+        <div class="grid">
+          <article class="demo">
+            <h3>Descendente (A B)</h3>
+            <p class="desc">
+              Exemplo: <code>.area-desc p</code> estiliza qualquer
+              <code>p</code> dentro de <code>.area-desc</code>.
+            </p>
+
+            <div class="box area-desc">
+              <p>Eu estou dentro de .area-desc</p>
+
+              <div>
+                <p>Eu também (descendente, mesmo estando “mais fundo”).</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo">
+            <h3>Filho direto (A &gt; B)</h3>
+            <p class="desc">
+              Exemplo: <code>.area-filho &gt; p</code> estiliza só filhos
+              diretos.
+            </p>
+
+            <div class="box area-filho">
+              <p>Sou filho direto ✅</p>
+
+              <div class="sub">
+                <p>Eu NÃO sou filho direto (sou neto) ❌</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="demo">
+            <h3>Irmão adjacente (A + B)</h3>
+            <p class="desc">
+              Exemplo: <code>.titulo + p</code> estiliza o primeiro
+              <code>p</code> imediatamente após <code>.titulo</code>.
+            </p>
+
+            <div class="box">
+              <h4 class="titulo">Título</h4>
+              <p>Eu sou o 1º p logo depois do título ✅</p>
+              <p>Eu sou o 2º p (não pego) ❌</p>
+            </div>
+          </article>
+
+          <article class="demo">
+            <h3>Irmãos gerais (A ~ B)</h3>
+            <p class="desc">
+              Exemplo: <code>.marco ~ p</code> estiliza todos os
+              <code>p</code> após <code>.marco</code>.
+            </p>
+
+            <div class="box">
+              <p>Antes do marco (não pega).</p>
+              <div class="marco">Marco</div>
+              <p>Depois do marco ✅</p>
+              <p>Depois do marco ✅</p>
+              <p>Depois do marco ✅</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3) Atributos -->
+      <section class="card" aria-labelledby="atributos">
+        <h2 id="atributos">3) Seletores de atributo</h2>
+
+        <div class="grid">
+          <article class="demo">
+            <h3>[atributo="valor"]</h3>
+            <p class="desc">
+              Exemplo: <code>input[type="text"]</code> e
+              <code>input[type="password"]</code>.
+            </p>
+
+            <div class="box form">
+              <label>
+                Texto:
+                <input type="text" placeholder="type=text" />
+              </label>
+
+              <label>
+                Senha:
+                <input type="password" placeholder="type=password" />
+              </label>
+            </div>
+          </article>
+
+          <article class="demo">
+            <h3>Parciais (^=, $=, *=)</h3>
+            <p class="desc">
+              Exemplo: <code>a[href^="https"]</code>,
+              <code>a[href$=".pdf"]</code>, <code>a[href*="github"]</code>.
+            </p>
+
+            <div class="box links">
+              <a href="https://example.com">Link HTTPS</a>
+              <a href="arquivo.pdf">Link PDF</a>
+              <a href="https://github.com/djosh193">Link GitHub</a>
+              <a href="http://site.com">Link HTTP (não pega ^="https")</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4) Pseudo-classes -->
+      <section class="card" aria-labelledby="pseudoclasses">
+        <h2 id="pseudoclasses">4) Pseudo-classes</h2>
+
+        <div class="grid">
+          <article class="demo">
+            <h3>:hover, :focus, :active, :visited</h3>
+            <p class="desc">Passe o mouse, clique e use TAB para focar.</p>
+
+            <div class="box">
+              <a
+                class="link-demo"
+                href="https://example.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Link de teste (visited muda depois)
+              </a>
+
+              <label class="mt">
+                Campo focável:
+                <input
+                  class="focus-demo"
+                  type="text"
+                  placeholder="Clique ou TAB"
+                />
+              </label>
+
+              <button class="botao botao-ativo">
+                Clique e segure (active)
+              </button>
+            </div>
+          </article>
+
+          <article class="demo">
+            <h3>:first-child, :last-child, :nth-child()</h3>
+            <p class="desc">Uma lista onde o CSS aplica estilos por posição.</p>
+
+            <div class="box">
+              <ul class="lista">
+                <li>Primeiro item</li>
+                <li>Segundo item</li>
+                <li>Terceiro item</li>
+                <li>Último item</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 5) Pseudo-elementos -->
+      <section class="card" aria-labelledby="pseudoel">
+        <h2 id="pseudoel">5) Pseudo-elementos</h2>
+
+        <div class="grid">
+          <article class="demo">
+            <h3>::first-letter e ::first-line</h3>
+            <p class="desc">
+              O CSS altera a primeira letra e a primeira linha.
+            </p>
+
+            <div class="box">
+              <p class="texto-pe">
+                Este parágrafo tem pseudo-elementos. A primeira letra fica maior
+                e a primeira linha fica mais destacada. Redimensione a janela
+                para mudar o que é “primeira linha”.
+              </p>
+            </div>
+          </article>
+
+          <article class="demo">
+            <h3>::before e ::after</h3>
+            <p class="desc">
+              O CSS adiciona conteúdo antes e depois sem alterar o HTML.
+            </p>
+
+            <div class="box">
+              <div class="badge">Novo</div>
+              <p class="hint-mini">
+                O “brilhinho” e a setinha são ::before/::after.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 6) Especificidade -->
+      <section class="card" aria-labelledby="especificidade">
+        <h2 id="especificidade">6) Especificidade (prioridade)</h2>
+
+        <div class="grid">
+          <article class="demo">
+            <h3>TAG vs CLASSE vs ID</h3>
+            <p class="desc">
+              No CSS: a tag pinta de azul, a classe pinta de verde, o ID pinta
+              de vermelho. O texto final fica vermelho por causa da prioridade.
+            </p>
+
+            <div class="box">
+              <p id="principal" class="texto">
+                Eu tenho tag p + classe .texto + ID #principal
+              </p>
+            </div>
+          </article>
+
+          <article class="demo">
+            <h3>Combinação (mais específico)</h3>
+            <p class="desc">
+              <code>.card-especifica p</code> ganha de <code>p</code>.
+            </p>
+
+            <div class="box card-especifica">
+              <p>Este p está dentro de .card-especifica</p>
+              <p>Mais um p dentro do mesmo bloco</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>
+          Dev Studies • CSS/01-fundamentos • Autor:
+          <strong>Jorge Simões</strong>
+        </p>
+        <p class="subtitle">
+          Dica: abra o DevTools (F12) e use “Inspect” para ver qual seletor está
+          aplicando.
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
