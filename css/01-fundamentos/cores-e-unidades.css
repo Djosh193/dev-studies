@@ -1,0 +1,307 @@
+/* =========================================================
+   ARQUIVO: cores-e-unidades.css
+   DIRETÓRIO: css/01-fundamentos
+   REPOSITÓRIO: dev-studies
+
+   Autor: Jorge Simões
+   Descrição:
+   Este arquivo demonstra as principais formas de trabalhar
+   com cores e unidades de medida no CSS.
+
+   Conteúdo abordado:
+   • Cores nomeadas
+   • Hexadecimal
+   • RGB e RGBA
+   • HSL e HSLA
+   • Opacidade
+   • Unidades absolutas
+   • Unidades relativas
+   • Unidades de viewport
+   • Boas práticas
+========================================================= */
+
+/* =========================================================
+   1️⃣ CORES NOMEADAS
+   =========================================================
+   O CSS possui uma lista de cores pré-definidas.
+   Não é muito comum em produção, mas útil para estudos.
+*/
+
+.cor-nomeada {
+  color: red;
+  background-color: lightblue;
+  border: 2px solid green;
+}
+
+/* =========================================================
+   2️⃣ CORES HEXADECIMAIS
+   =========================================================
+   Formato: #RRGGBB
+
+   RR = vermelho
+   GG = verde
+   BB = azul
+
+   Valores de 00 até FF (hexadecimal)
+*/
+
+.cor-hexadecimal {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.cor-hex-vermelho {
+  color: #ff0000;
+}
+
+.cor-hex-verde {
+  color: #00ff00;
+}
+
+.cor-hex-azul {
+  color: #0000ff;
+}
+
+/* =========================================================
+   HEXADECIMAL CURTO
+   =========================================================
+   Quando os valores repetem.
+
+   #ffffff → #fff
+   #000000 → #000
+*/
+
+.cor-hex-curto {
+  background-color: #333;
+  color: #fff;
+}
+
+/* =========================================================
+   HEXA COM TRANSPARÊNCIA
+   =========================================================
+   Formato: #RRGGBBAA
+
+   AA = transparência
+*/
+
+.cor-hex-alpha {
+  background-color: #ff000080;
+}
+
+/* =========================================================
+   3️⃣ RGB (RED GREEN BLUE)
+   =========================================================
+   Cada cor vai de 0 a 255
+*/
+
+.cor-rgb {
+  background-color: rgb(255, 0, 0);
+}
+
+.cor-rgb-verde {
+  background-color: rgb(0, 255, 0);
+}
+
+.cor-rgb-azul {
+  background-color: rgb(0, 0, 255);
+}
+
+/* =========================================================
+   4️⃣ RGBA (RGB + ALPHA)
+   =========================================================
+   O alpha controla a transparência
+
+   0 = totalmente transparente
+   1 = totalmente visível
+*/
+
+.cor-rgba {
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+/* =========================================================
+   5️⃣ HSL (HUE SATURATION LIGHTNESS)
+   =========================================================
+
+   Hue = cor (0 a 360 graus)
+   Saturation = saturação (%)
+   Lightness = luminosidade (%)
+
+   Exemplo:
+   hsl(0,100%,50%) → vermelho
+*/
+
+.cor-hsl {
+  background-color: hsl(0, 100%, 50%);
+}
+
+.cor-hsl-verde {
+  background-color: hsl(120, 100%, 50%);
+}
+
+.cor-hsl-azul {
+  background-color: hsl(240, 100%, 50%);
+}
+
+/* =========================================================
+   6️⃣ HSLA (HSL + ALPHA)
+   =========================================================
+*/
+
+.cor-hsla {
+  background-color: hsla(200, 100%, 50%, 0.5);
+}
+
+/* =========================================================
+   7️⃣ OPACITY
+   =========================================================
+   Define a transparência de todo o elemento.
+
+   Diferente do rgba, aqui tudo fica transparente,
+   incluindo texto e bordas.
+*/
+
+.caixa-transparente {
+  opacity: 0.5;
+}
+
+/* =========================================================
+   8️⃣ UNIDADES ABSOLUTAS
+   =========================================================
+   São fixas e não dependem de outros elementos.
+
+   px = pixels
+   pt = pontos
+   cm = centímetros
+   mm = milímetros
+   in = polegadas
+*/
+
+.unidades-absolutas {
+  width: 300px;
+  height: 200px;
+
+  font-size: 16px;
+}
+
+/* =========================================================
+   9️⃣ UNIDADES RELATIVAS
+   =========================================================
+   Dependem de outro valor.
+
+   em → relativo ao elemento pai
+   rem → relativo ao root (html)
+*/
+
+.unidade-em {
+  font-size: 2em;
+}
+
+.unidade-rem {
+  font-size: 2rem;
+}
+
+/* =========================================================
+   EM vs REM
+   =========================================================
+*/
+
+.container-em {
+  font-size: 20px;
+}
+
+.container-em p {
+  font-size: 2em;
+}
+
+.container-rem p {
+  font-size: 2rem;
+}
+
+/* =========================================================
+   🔟 PORCENTAGEM %
+   =========================================================
+   Relativo ao elemento pai.
+*/
+
+.caixa-percentual {
+  width: 50%;
+  height: 50%;
+}
+
+/* =========================================================
+   11️⃣ VIEWPORT UNITS
+   =========================================================
+
+   vw = largura da tela
+   vh = altura da tela
+   vmin = menor dimensão
+   vmax = maior dimensão
+*/
+
+.caixa-vw {
+  width: 50vw;
+}
+
+.caixa-vh {
+  height: 50vh;
+}
+
+/* =========================================================
+   12️⃣ EXEMPLO DE LAYOUT RESPONSIVO
+   =========================================================
+*/
+
+.container-responsivo {
+  width: 80%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 2rem;
+
+  background-color: #f5f5f5;
+}
+
+/* =========================================================
+   13️⃣ USANDO VARIÁVEIS DE COR
+   =========================================================
+*/
+
+:root {
+  --cor-primaria: #3498db;
+  --cor-secundaria: #2ecc71;
+  --cor-erro: #e74c3c;
+}
+
+.botao {
+  background-color: var(--cor-primaria);
+  color: white;
+  padding: 1rem;
+}
+
+.botao-sucesso {
+  background-color: var(--cor-secundaria);
+}
+
+.botao-erro {
+  background-color: var(--cor-erro);
+}
+
+/* =========================================================
+   14️⃣ BOAS PRÁTICAS
+   =========================================================
+
+   ✔ Use REM para fontes
+   ✔ Use HEX ou HSL para cores
+   ✔ Use variáveis CSS
+   ✔ Evite px em layouts responsivos
+*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+
+  color: #333;
+}

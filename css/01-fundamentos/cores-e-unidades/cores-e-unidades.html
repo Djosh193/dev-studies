@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jorge Simões" />
+    <title>Cores e Unidades - Dev Studies</title>
+
+    <link rel="stylesheet" href="./cores-e-unidades.css" />
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <h1>Cores e Unidades no CSS</h1>
+        <p class="subtitle">
+          Visualização prática de cores (nomeadas/hex/rgb/hsl/alpha/opacity) e
+          unidades (px/em/rem/%/vw/vh/vmin/vmax).
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- ==============================
+           CORES
+      =============================== -->
+      <section class="section">
+        <h2>1) Cores</h2>
+
+        <article class="card">
+          <h3>Cores nomeadas</h3>
+          <div class="grid">
+            <div class="swatch cor-nomeada">
+              color: red<br />bg: lightblue<br />border: green
+            </div>
+            <div class="swatch" style="background: tomato; color: #111">
+              tomato
+            </div>
+            <div class="swatch" style="background: gold; color: #111">gold</div>
+            <div class="swatch" style="background: rebeccapurple">
+              rebeccapurple
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Hex (#RRGGBB) e curto (#RGB)</h3>
+          <div class="grid">
+            <div class="swatch cor-hexadecimal">#ffffff / #000000</div>
+            <div class="swatch cor-hex-vermelho">#ff0000</div>
+            <div class="swatch cor-hex-verde">#00ff00</div>
+            <div class="swatch cor-hex-azul">#0000ff</div>
+            <div class="swatch cor-hex-curto">#333 / #fff</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Hex com alpha (#RRGGBBAA)</h3>
+          <p class="hint">
+            O quadrado abaixo tem um fundo “meio transparente” (vermelho com
+            alpha).
+          </p>
+          <div class="grid">
+            <div class="swatch cor-hex-alpha">#ff000080</div>
+            <div class="swatch base-checker">Fundo xadrez (referência)</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>RGB e RGBA</h3>
+          <div class="grid">
+            <div class="swatch cor-rgb">rgb(255,0,0)</div>
+            <div class="swatch cor-rgb-verde">rgb(0,255,0)</div>
+            <div class="swatch cor-rgb-azul">rgb(0,0,255)</div>
+            <div class="swatch cor-rgba">rgba(255,0,0,0.5)</div>
+            <div class="swatch base-checker">Fundo xadrez (referência)</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>HSL e HSLA</h3>
+          <div class="grid">
+            <div class="swatch cor-hsl">hsl(0,100%,50%)</div>
+            <div class="swatch cor-hsl-verde">hsl(120,100%,50%)</div>
+            <div class="swatch cor-hsl-azul">hsl(240,100%,50%)</div>
+            <div class="swatch cor-hsla">hsla(200,100%,50%,0.5)</div>
+            <div class="swatch base-checker">Fundo xadrez (referência)</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Opacity (transparência do elemento inteiro)</h3>
+          <p class="hint">
+            Perceba que aqui <strong>texto + borda + fundo</strong> ficam
+            transparentes ao mesmo tempo.
+          </p>
+          <div class="grid">
+            <div class="swatch base-checker">Fundo xadrez (referência)</div>
+            <div class="swatch caixa-transparente">
+              opacity: 0.5<br />
+              (tudo fica transparente)
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Variáveis CSS (:root)</h3>
+          <div class="row">
+            <button class="botao">Primário</button>
+            <button class="botao botao-sucesso">Sucesso</button>
+            <button class="botao botao-erro">Erro</button>
+          </div>
+        </article>
+      </section>
+
+      <!-- ==============================
+           UNIDADES
+      =============================== -->
+      <section class="section">
+        <h2>2) Unidades</h2>
+
+        <article class="card">
+          <h3>Unidades absolutas (px)</h3>
+          <p class="hint">A caixa abaixo tem <strong>300px × 200px</strong>.</p>
+          <div class="unit-demo unidades-absolutas">
+            width: 300px;<br />
+            height: 200px;<br />
+            font-size: 16px;
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>em vs rem (fonte)</h3>
+          <p class="hint">
+            <strong>em</strong> depende do tamanho de fonte do elemento pai.<br />
+            <strong>rem</strong> depende do tamanho de fonte do
+            <code>html</code>.
+          </p>
+
+          <div class="grid-2">
+            <div class="panel container-em">
+              <h4>Pai: 20px</h4>
+              <p class="unidade-em">Texto 2em (fica 40px)</p>
+              <p class="hint">
+                container-em { font-size: 20px }<br />p { font-size: 2em }
+              </p>
+            </div>
+
+            <div class="panel container-rem">
+              <h4>Root (html): 16px</h4>
+              <p class="unidade-rem">Texto 2rem (fica 32px)</p>
+              <p class="hint">p { font-size: 2rem }</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>% (relativo ao pai)</h3>
+          <p class="hint">
+            A caixa interna tem <strong>50%</strong> da largura e altura do pai.
+          </p>
+
+          <div class="percent-parent">
+            Pai (fixo): 360px × 240px
+            <div class="caixa-percentual percent-child">Filho: 50% × 50%</div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Viewport units (vw / vh / vmin / vmax)</h3>
+          <p class="hint">
+            Redimensione a janela do navegador e veja as caixas mudarem.
+          </p>
+
+          <div class="grid-2">
+            <div class="panel">
+              <div class="unit-box caixa-vw">width: 50vw</div>
+              <p class="hint">50vw = 50% da largura da tela</p>
+            </div>
+
+            <div class="panel">
+              <div class="unit-box caixa-vh">height: 20vh</div>
+              <p class="hint">20vh = 20% da altura da tela</p>
+            </div>
+
+            <div class="panel">
+              <div class="unit-box caixa-vmin">
+                width: 30vmin; height: 30vmin
+              </div>
+              <p class="hint">vmin = menor dimensão (largura ou altura)</p>
+            </div>
+
+            <div class="panel">
+              <div class="unit-box caixa-vmax">
+                width: 30vmax; height: 30vmax
+              </div>
+              <p class="hint">vmax = maior dimensão (largura ou altura)</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <h3>Layout responsivo com % + rem</h3>
+          <div class="container-responsivo">
+            <p>
+              Eu tenho: <strong>width: 80%</strong>,
+              <strong>max-width: 1200px</strong>, padding em
+              <strong>rem</strong> e margin auto.
+            </p>
+            <p class="hint">Isso é uma base comum de container em sites.</p>
+          </div>
+        </article>
+      </section>
+
+      <footer class="page-footer">
+        <p>
+          Dev Studies • CSS/01-fundamentos • Autor:
+          <strong>Jorge Simões</strong>
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
