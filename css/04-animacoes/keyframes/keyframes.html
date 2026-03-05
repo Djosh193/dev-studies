@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyframes | Dev-Studies</title>
+    <link rel="stylesheet" href="keyframes.css" />
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <h1>@keyframes (Visualizador)</h1>
+        <p>
+          Exemplos práticos de animações com
+          <code>@keyframes</code> + <code>animation</code>: mover, fade, escala,
+          rotação, cor, composição, loading, pulso, slide, steps e bounce.
+        </p>
+        <p class="hint">
+          Dica: no seu sistema, ative “Reduzir movimento” pra ver o
+          <code>prefers-reduced-motion</code> funcionando.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- ===== 1) MOVE ===== -->
+      <section class="card">
+        <h2>1) Movimento (translate)</h2>
+        <p class="desc">
+          Use <code>transform: translate()</code> para melhor performance.
+        </p>
+
+        <div class="demo-row">
+          <article class="panel">
+            <h3>Mover na horizontal</h3>
+            <div class="stage">
+              <div class="box move-x">MOVE</div>
+            </div>
+            <p class="code">
+              animation: moveX 1.8s ease-in-out infinite alternate;
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>“Bounce” simples</h3>
+            <div class="stage">
+              <div class="ball bounce"></div>
+            </div>
+            <p class="code">animation: bounce 1.2s ease-in-out infinite;</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 2) OPACITY ===== -->
+      <section class="card">
+        <h2>2) Opacidade (fade)</h2>
+
+        <div class="demo-row">
+          <article class="panel">
+            <h3>Fade-in/out</h3>
+            <div class="stage center">
+              <div class="badge fade">FADE</div>
+            </div>
+            <p class="code">animation: fade 1.4s ease-in-out infinite;</p>
+          </article>
+
+          <article class="panel">
+            <h3>Pulso (scale + opacity)</h3>
+            <div class="stage center">
+              <button class="btn pulse">PULSO</button>
+            </div>
+            <p class="code">animation: pulse 1.5s ease-in-out infinite;</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 3) SCALE ===== -->
+      <section class="card">
+        <h2>3) Escala (scale)</h2>
+
+        <div class="demo-row">
+          <article class="panel">
+            <h3>Scale loop</h3>
+            <div class="stage center">
+              <div class="box scale">SCALE</div>
+            </div>
+            <p class="code">animation: scaleLoop 1.6s ease-in-out infinite;</p>
+          </article>
+
+          <article class="panel">
+            <h3>Entrada (slide + fade)</h3>
+            <div class="stage">
+              <div class="toast slide-in">Entrando...</div>
+            </div>
+            <p class="code">animation: slideIn 0.7s ease-out both;</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 4) ROTATION ===== -->
+      <section class="card">
+        <h2>4) Rotação (rotate)</h2>
+
+        <div class="demo-row">
+          <article class="panel">
+            <h3>Rotação contínua</h3>
+            <div class="stage center">
+              <div class="box rotate">ROTATE</div>
+            </div>
+            <p class="code">animation: spin 1.4s linear infinite;</p>
+          </article>
+
+          <article class="panel">
+            <h3>Spinner (loading)</h3>
+            <div class="stage center">
+              <div class="spinner" aria-label="Carregando"></div>
+            </div>
+            <p class="code">animation: spin 0.9s linear infinite;</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 5) COLOR ===== -->
+      <section class="card">
+        <h2>5) Cor (background-color)</h2>
+
+        <div class="demo-row">
+          <article class="panel">
+            <h3>Troca de cor</h3>
+            <div class="stage center">
+              <div class="box color">COLOR</div>
+            </div>
+            <p class="code">animation: colorShift 2.6s linear infinite;</p>
+          </article>
+
+          <article class="panel">
+            <h3>Gradiente animado (background-position)</h3>
+            <div class="stage center">
+              <div class="gradient"></div>
+            </div>
+            <p class="code">
+              animation: gradientMove 2.5s ease-in-out infinite;
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 6) COMPOSED ===== -->
+      <section class="card">
+        <h2>6) Animação composta</h2>
+        <p class="desc">Combine transform + opacity para animações suaves.</p>
+
+        <div class="demo-row">
+          <article class="panel">
+            <h3>Transform + opacity</h3>
+            <div class="stage center">
+              <div class="box combo">COMBO</div>
+            </div>
+            <p class="code">animation: combo 3s ease-in-out infinite;</p>
+          </article>
+
+          <article class="panel">
+            <h3>Saída (slide-out)</h3>
+            <div class="stage">
+              <div class="toast slide-out">Saindo...</div>
+            </div>
+            <p class="code">animation: slideOut 0.7s ease-in both;</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 7) STEPS ===== -->
+      <section class="card">
+        <h2>7) steps() (animação “em quadros”)</h2>
+
+        <article class="panel">
+          <h3>Indicador “digitando”</h3>
+          <p class="desc">
+            steps() é ótimo para efeitos tipo “máquina de escrever”.
+          </p>
+
+          <div class="stage center">
+            <div class="typing" aria-label="Digitando">
+              <span class="dots">...</span>
+            </div>
+          </div>
+          <p class="code">animation: dots 1.2s steps(4, end) infinite;</p>
+        </article>
+      </section>
+
+      <!-- ===== 8) NOTE ===== -->
+      <section class="card">
+        <h2>8) Observações de performance e acessibilidade</h2>
+
+        <article class="panel">
+          <ul class="list">
+            <li>
+              <b>Prefira</b> animar <code>transform</code> e
+              <code>opacity</code>.
+            </li>
+            <li>
+              <b>Evite</b> animar frequentemente <code>width</code>,
+              <code>height</code>, <code>top/left</code>.
+            </li>
+            <li>
+              Respeite <code>prefers-reduced-motion</code> para usuários
+              sensíveis a animações.
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <small>Dev-Studies • Autor: Jorge Simões</small>
+      </div>
+    </footer>
+  </body>
+</html>

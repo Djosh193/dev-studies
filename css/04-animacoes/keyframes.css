@@ -1,0 +1,380 @@
+/*
+==================================================
+CSS KEYFRAMES
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/04-animacoes
+Arquivo: keyframes.css
+==================================================
+
+@keyframes permite criar animações no CSS
+definindo diferentes estados de um elemento
+ao longo do tempo.
+
+Uma animação pode alterar propriedades como:
+
+• posição
+• cor
+• tamanho
+• rotação
+• opacidade
+• escala
+• transformações
+
+A estrutura básica é:
+
+@keyframes nome-da-animacao {
+  from { ... }
+  to { ... }
+}
+
+ou
+
+@keyframes nome-da-animacao {
+  0% { ... }
+  50% { ... }
+  100% { ... }
+}
+*/
+
+/*
+==================================================
+1. ANIMAÇÃO BÁSICA
+==================================================
+
+Exemplo simples usando from → to
+*/
+
+@keyframes mover-direita {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(200px);
+  }
+}
+
+/*
+Aplicando a animação
+*/
+
+.elemento-movendo {
+  animation: mover-direita 2s;
+}
+
+/*
+==================================================
+2. ANIMAÇÃO COM PORCENTAGEM
+==================================================
+
+Permite definir múltiplos estágios.
+*/
+
+@keyframes animacao-escala {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.elemento-escala {
+  animation: animacao-escala 2s;
+}
+
+/*
+==================================================
+3. ANIMAÇÃO DE OPACIDADE
+==================================================
+*/
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.elemento-fade {
+  animation: fade-in 1s ease-in;
+}
+
+/*
+==================================================
+4. ANIMAÇÃO DE ROTAÇÃO
+==================================================
+*/
+
+@keyframes rotacionar {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.elemento-rotacao {
+  animation: rotacionar 2s linear infinite;
+}
+
+/*
+==================================================
+5. ANIMAÇÃO DE COR
+==================================================
+*/
+
+@keyframes mudar-cor {
+  0% {
+    background-color: red;
+  }
+
+  50% {
+    background-color: blue;
+  }
+
+  100% {
+    background-color: green;
+  }
+}
+
+.elemento-cor {
+  animation: mudar-cor 3s infinite;
+}
+
+/*
+==================================================
+6. ANIMAÇÃO DE POSIÇÃO
+==================================================
+*/
+
+@keyframes mover-elemento {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(100px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.elemento-posicao {
+  animation: mover-elemento 3s infinite;
+}
+
+/*
+==================================================
+7. ANIMAÇÃO COM MULTIPLAS PROPRIEDADES
+==================================================
+*/
+
+@keyframes animacao-completa {
+  0% {
+    transform: scale(1) rotate(0deg);
+
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2) rotate(180deg);
+
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: scale(1) rotate(360deg);
+
+    opacity: 1;
+  }
+}
+
+.elemento-completo {
+  animation: animacao-completa 4s infinite;
+}
+
+/*
+==================================================
+8. KEYFRAMES + TRANSFORM
+==================================================
+
+Transformações são muito usadas em animações.
+*/
+
+@keyframes animacao-transform {
+  0% {
+    transform: translateX(0) scale(1);
+  }
+
+  50% {
+    transform: translateX(50px) scale(1.3);
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+  }
+}
+
+/*
+==================================================
+9. ANIMAÇÃO DE LOADING
+==================================================
+*/
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+
+  border: 4px solid #ddd;
+
+  border-top: 4px solid #333;
+
+  border-radius: 50%;
+
+  animation: loading 1s linear infinite;
+}
+
+/*
+==================================================
+10. ANIMAÇÃO DE PULSO
+==================================================
+*/
+
+@keyframes pulso {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.botao-pulso {
+  animation: pulso 1.5s infinite;
+}
+
+/*
+==================================================
+11. ANIMAÇÃO DE ENTRADA
+==================================================
+*/
+
+@keyframes slide-in {
+  from {
+    transform: translateY(50px);
+
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+
+    opacity: 1;
+  }
+}
+
+.elemento-entrada {
+  animation: slide-in 0.6s ease-out;
+}
+
+/*
+==================================================
+12. ANIMAÇÃO DE SAÍDA
+==================================================
+*/
+
+@keyframes slide-out {
+  from {
+    transform: translateY(0);
+
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(50px);
+
+    opacity: 0;
+  }
+}
+
+.elemento-saida {
+  animation: slide-out 0.6s ease-in;
+}
+
+/*
+==================================================
+13. BOAS PRÁTICAS
+==================================================
+
+• Prefira usar transform em vez de top/left
+  (melhor performance)
+
+• Use opacity para animações suaves
+
+• Evite animações muito longas
+
+• Use ease-out para entrada de elementos
+
+• Use linear para loading/spinner
+
+• Evite animar propriedades pesadas como:
+  width, height, box-shadow, margin
+
+• Prefira:
+
+transform
+opacity
+*/
+
+/*
+==================================================
+RESUMO
+==================================================
+
+@keyframes
+→ define animação
+
+animation
+→ aplica animação
+
+from / to
+→ estado inicial e final
+
+0% → 100%
+→ estágios da animação
+
+infinite
+→ repete animação
+
+linear / ease / ease-in / ease-out
+→ curva de movimento
+*/

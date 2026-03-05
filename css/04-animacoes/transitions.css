@@ -1,0 +1,353 @@
+/*
+==================================================
+CSS TRANSITIONS
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/04-animacoes
+Arquivo: transitions.css
+==================================================
+
+Transitions permitem criar animações suaves
+quando uma propriedade CSS muda de valor.
+
+Elas são muito usadas em interações como:
+
+• hover
+• focus
+• active
+• mudança de classe com JavaScript
+
+Ao invés de a mudança acontecer instantaneamente,
+a transição cria uma animação gradual.
+*/
+
+/*
+==================================================
+1. PROPRIEDADES DE TRANSITION
+==================================================
+
+Uma transition possui quatro propriedades principais:
+
+transition-property
+→ qual propriedade será animada
+
+transition-duration
+→ duração da animação
+
+transition-timing-function
+→ curva de velocidade
+
+transition-delay
+→ atraso antes de iniciar
+*/
+
+/*
+==================================================
+2. TRANSITION-PROPERTY
+==================================================
+*/
+
+.botao {
+  background-color: #3498db;
+
+  transition-property: background-color;
+}
+
+.botao:hover {
+  background-color: #2980b9;
+}
+
+/*
+==================================================
+3. TRANSITION-DURATION
+==================================================
+
+Define quanto tempo a animação leva.
+*/
+
+.caixa {
+  width: 100px;
+  height: 100px;
+
+  background: red;
+
+  transition-duration: 0.5s;
+}
+
+.caixa:hover {
+  background: blue;
+}
+
+/*
+==================================================
+4. TRANSITION-TIMING-FUNCTION
+==================================================
+
+Define a aceleração da animação.
+*/
+
+.caixa-ease {
+  transition: transform 0.5s ease;
+}
+
+.caixa-linear {
+  transition: transform 0.5s linear;
+}
+
+.caixa-ease-in {
+  transition: transform 0.5s ease-in;
+}
+
+.caixa-ease-out {
+  transition: transform 0.5s ease-out;
+}
+
+.caixa-ease-in-out {
+  transition: transform 0.5s ease-in-out;
+}
+
+/*
+==================================================
+5. TRANSITION-DELAY
+==================================================
+
+Define atraso antes da animação iniciar.
+*/
+
+.caixa-delay {
+  transition: background 0.5s ease 0.3s;
+}
+
+.caixa-delay:hover {
+  background: green;
+}
+
+/*
+==================================================
+6. SHORTHAND TRANSITION
+==================================================
+
+Forma mais usada:
+
+transition: propriedade duração timing delay;
+*/
+
+.botao-hover {
+  background: #3498db;
+
+  transition: background 0.3s ease;
+}
+
+.botao-hover:hover {
+  background: #2ecc71;
+}
+
+/*
+==================================================
+7. TRANSITION MULTIPLAS PROPRIEDADES
+==================================================
+*/
+
+.card {
+  transform: scale(1);
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/*
+==================================================
+8. TRANSITION ALL
+==================================================
+
+Aplica transição a todas as propriedades.
+*/
+
+.elemento {
+  transition: all 0.3s ease;
+}
+
+.elemento:hover {
+  transform: scale(1.1);
+
+  background: orange;
+}
+
+/*
+==================================================
+9. TRANSFORM + TRANSITION
+==================================================
+
+Muito usado para animações suaves.
+*/
+
+.botao-transform {
+  transition: transform 0.3s ease;
+}
+
+.botao-transform:hover {
+  transform: translateY(-5px);
+}
+
+/*
+==================================================
+10. OPACITY + TRANSITION
+==================================================
+*/
+
+.fade {
+  opacity: 0.5;
+
+  transition: opacity 0.4s ease;
+}
+
+.fade:hover {
+  opacity: 1;
+}
+
+/*
+==================================================
+11. MENU HOVER
+==================================================
+*/
+
+.menu a {
+  color: #333;
+
+  text-decoration: none;
+
+  transition: color 0.3s ease;
+}
+
+.menu a:hover {
+  color: #e74c3c;
+}
+
+/*
+==================================================
+12. BOTÃO MODERNO
+==================================================
+*/
+
+.botao-moderno {
+  background: #4caf50;
+
+  color: white;
+
+  padding: 12px 24px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.botao-moderno:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*
+==================================================
+13. IMAGE HOVER EFFECT
+==================================================
+*/
+
+.imagem {
+  transition: transform 0.5s ease;
+}
+
+.imagem:hover {
+  transform: scale(1.1);
+}
+
+/*
+==================================================
+14. TRANSITION COM BORDER
+==================================================
+*/
+
+.card-border {
+  border: 2px solid transparent;
+
+  transition: border-color 0.3s ease;
+}
+
+.card-border:hover {
+  border-color: #3498db;
+}
+
+/*
+==================================================
+15. BOAS PRÁTICAS
+==================================================
+
+• Prefira animar:
+
+transform
+opacity
+
+Essas propriedades são mais performáticas.
+
+• Evite animar frequentemente:
+
+width
+height
+margin
+padding
+top
+left
+
+pois causam recalculo de layout.
+
+• Use durations curtas:
+
+0.2s — 0.4s geralmente é ideal.
+
+• Use ease ou ease-out para
+interações de UI.
+*/
+
+/*
+==================================================
+RESUMO
+==================================================
+
+transition-property
+→ qual propriedade animar
+
+transition-duration
+→ duração
+
+transition-timing-function
+→ curva de velocidade
+
+transition-delay
+→ atraso
+
+transition
+→ shorthand mais usado
+
+Transitions são ideais para:
+
+hover
+botões
+menus
+cards
+micro-interações
+*/

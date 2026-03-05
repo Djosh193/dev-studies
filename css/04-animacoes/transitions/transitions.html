@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transitions | Dev-Studies</title>
+    <link rel="stylesheet" href="transitions.css" />
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <h1>CSS Transitions (Visualizador)</h1>
+        <p>
+          Exemplos de <code>transition</code> em <b>hover</b>, <b>focus</b> e
+          <b>active</b>: duração, delay, timing-function, múltiplas
+          propriedades, <code>all</code>, transform/opacity, menu, card e
+          imagem.
+        </p>
+        <p class="hint">
+          Dica: passe o mouse, use TAB para focar inputs/botões e clique/segure
+          para ver <code>:active</code>.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- ===== 1) BÁSICO ===== -->
+      <section class="card">
+        <h2>1) Básico (hover)</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>Cor (background)</h3>
+            <p class="desc">
+              <code>transition: background-color 250ms ease;</code>
+            </p>
+
+            <div class="demo-area center">
+              <button class="btn basic">Passe o mouse</button>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>Opacity</h3>
+            <p class="desc"><code>transition: opacity 300ms ease;</code></p>
+
+            <div class="demo-area center">
+              <div class="chip fade">FADE</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 2) TRANSFORM ===== -->
+      <section class="card">
+        <h2>2) Transform (melhor performance)</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>Translate (levantar)</h3>
+            <p class="desc"><code>transition: transform 220ms ease;</code></p>
+
+            <div class="demo-area center">
+              <button class="btn lift">Levanta</button>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>Scale</h3>
+            <p class="desc"><code>transition: transform 220ms ease;</code></p>
+
+            <div class="demo-area center">
+              <div class="tile scale">SCALE</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 3) TIMING FUNCTIONS ===== -->
+      <section class="card">
+        <h2>3) Timing functions (curvas)</h2>
+        <p class="desc">
+          Passe o mouse em cada faixa e compare o “jeito” do movimento.
+        </p>
+
+        <article class="panel">
+          <div class="timing-grid">
+            <div class="timing">
+              <div class="label">linear</div>
+              <div class="track linear"><span class="dot"></span></div>
+            </div>
+
+            <div class="timing">
+              <div class="label">ease</div>
+              <div class="track ease"><span class="dot"></span></div>
+            </div>
+
+            <div class="timing">
+              <div class="label">ease-in</div>
+              <div class="track ease-in"><span class="dot"></span></div>
+            </div>
+
+            <div class="timing">
+              <div class="label">ease-out</div>
+              <div class="track ease-out"><span class="dot"></span></div>
+            </div>
+
+            <div class="timing">
+              <div class="label">ease-in-out</div>
+              <div class="track ease-in-out"><span class="dot"></span></div>
+            </div>
+
+            <div class="timing">
+              <div class="label">cubic-bezier</div>
+              <div class="track bezier"><span class="dot"></span></div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 4) DELAY ===== -->
+      <section class="card">
+        <h2>4) Delay</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>Com delay</h3>
+            <p class="desc">
+              <code>transition: transform 250ms ease 250ms;</code>
+            </p>
+
+            <div class="demo-area center">
+              <button class="btn delay">Tem atraso</button>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>Sem delay</h3>
+            <p class="desc"><code>transition: transform 250ms ease;</code></p>
+
+            <div class="demo-area center">
+              <button class="btn no-delay">Sem atraso</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 5) MULTIPLAS PROPRIEDADES ===== -->
+      <section class="card">
+        <h2>5) Múltiplas propriedades</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>Card (transform + shadow + border)</h3>
+            <p class="desc">
+              <code>transition: transform, box-shadow, border-color;</code>
+            </p>
+
+            <div class="demo-area">
+              <div class="card-demo">
+                <h4>Card com hover</h4>
+                <p class="muted">Sutil, mas passa sensação de “clicável”.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>“transition: all” (use com cuidado)</h3>
+            <p class="desc"><code>transition: all 280ms ease;</code></p>
+
+            <div class="demo-area center">
+              <div class="tile all">ALL</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 6) MENU ===== -->
+      <section class="card">
+        <h2>6) Menu (color + underline)</h2>
+
+        <article class="panel">
+          <nav class="menu">
+            <a href="#">Início</a>
+            <a href="#">Projetos</a>
+            <a href="#">Contato</a>
+          </nav>
+          <p class="muted" style="margin-top: 10px">
+            Transição em <code>color</code> e um underline animado com
+            pseudo-elemento.
+          </p>
+        </article>
+      </section>
+
+      <!-- ===== 7) IMAGEM ===== -->
+      <section class="card">
+        <h2>7) Imagem (zoom no hover)</h2>
+
+        <article class="panel">
+          <p class="desc">
+            Zoom suave com <code>transform: scale()</code> (boa performance).
+          </p>
+
+          <div class="img-wrap">
+            <img
+              class="img"
+              alt="Imagem demo"
+              src="data:image/svg+xml;utf8,
+              <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'>
+                <defs>
+                  <linearGradient id='g' x1='0' x2='1'>
+                    <stop offset='0' stop-color='%2360a5fa'/>
+                    <stop offset='1' stop-color='%23a78bfa'/>
+                  </linearGradient>
+                </defs>
+                <rect width='1200' height='700' fill='url(%23g)'/>
+                <text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle'
+                      font-family='Arial' font-size='54' fill='white'>
+                  Hover Zoom (Transitions)
+                </text>
+              </svg>"
+            />
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 8) FOCUS / ACTIVE ===== -->
+      <section class="card">
+        <h2>8) Focus e Active</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>Input com focus</h3>
+            <p class="desc">
+              Use TAB e veja a borda/sombra mudarem suavemente.
+            </p>
+
+            <div class="demo-area">
+              <label class="field">
+                <span>Seu nome</span>
+                <input type="text" placeholder="Digite aqui..." />
+              </label>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>Botão com active (clique e segure)</h3>
+            <p class="desc">
+              Active geralmente usa transição curta e “resposta rápida”.
+            </p>
+
+            <div class="demo-area center">
+              <button class="btn press">Pressione</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 9) NOTAS ===== -->
+      <section class="card">
+        <h2>9) Boas práticas</h2>
+
+        <article class="panel">
+          <ul class="list">
+            <li>
+              <b>Prefira</b> animar <code>transform</code> e
+              <code>opacity</code>.
+            </li>
+            <li>
+              <b>Evite</b> animar sempre <code>width</code>,
+              <code>height</code>, <code>top/left</code>.
+            </li>
+            <li>Interações de UI costumam ficar boas com <b>180–350ms</b>.</li>
+            <li>
+              Respeite <code>prefers-reduced-motion</code> para acessibilidade.
+            </li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <small>Dev-Studies • Autor: Jorge Simões</small>
+      </div>
+    </footer>
+  </body>
+</html>

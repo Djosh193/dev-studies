@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animações Práticas | Dev-Studies</title>
+    <link rel="stylesheet" href="animacoes-praticas.css" />
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <h1>Animações Práticas (Visualizador)</h1>
+        <p>
+          Catálogo de microinterações: hover/active, spinner, skeleton, ripple,
+          dropdown, entrada, shake, typing e badge pop.
+        </p>
+        <p class="hint">
+          Dica: se seu sistema tiver “Reduzir movimento”, ative para ver
+          <code>prefers-reduced-motion</code>.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- ===== 1) Botões ===== -->
+      <section class="card">
+        <h2>1) Botões (hover / active / gradiente)</h2>
+
+        <div class="grid-3">
+          <article class="panel">
+            <h3>Hover (levantar)</h3>
+            <div class="demo-area center">
+              <button class="btn btn-hover">Passe o mouse</button>
+            </div>
+            <p class="code">transition: transform + box-shadow</p>
+          </article>
+
+          <article class="panel">
+            <h3>Active (pressionar)</h3>
+            <div class="demo-area center">
+              <button class="btn btn-press">Clique e segure</button>
+            </div>
+            <p class="code">:active → scale(0.96)</p>
+          </article>
+
+          <article class="panel">
+            <h3>Gradiente (hover)</h3>
+            <div class="demo-area center">
+              <button class="btn btn-gradient">Gradiente</button>
+            </div>
+            <p class="code">hover com sombra suave</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 2) Card hover ===== -->
+      <section class="card">
+        <h2>2) Card hover (clicável)</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>Card com elevação</h3>
+            <div class="demo-area">
+              <div class="ui-card">
+                <h4>Card interativo</h4>
+                <p>
+                  Passe o mouse para ver a transição em <code>transform</code> e
+                  <code>box-shadow</code>.
+                </p>
+                <div class="tags">
+                  <span class="tag">UI</span>
+                  <span class="tag">Hover</span>
+                  <span class="tag">Transition</span>
+                </div>
+              </div>
+            </div>
+            <p class="code">transform + box-shadow</p>
+          </article>
+
+          <article class="panel">
+            <h3>Imagem com zoom</h3>
+            <div class="demo-area">
+              <div class="img-wrap">
+                <img
+                  class="img"
+                  alt="Imagem demo"
+                  src="data:image/svg+xml;utf8,
+                  <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='700'>
+                    <defs>
+                      <linearGradient id='g' x1='0' x2='1'>
+                        <stop offset='0' stop-color='%2360a5fa'/>
+                        <stop offset='1' stop-color='%23a78bfa'/>
+                      </linearGradient>
+                    </defs>
+                    <rect width='1200' height='700' fill='url(%23g)'/>
+                    <text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle'
+                          font-family='Arial' font-size='54' fill='white'>
+                      Hover Zoom
+                    </text>
+                  </svg>"
+                />
+              </div>
+            </div>
+            <p class="code">overflow + scale no hover</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 3) Loading / Skeleton ===== -->
+      <section class="card">
+        <h2>3) Loading (spinner) + Skeleton</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>Spinner</h3>
+            <div class="demo-area center">
+              <div class="spinner" aria-label="Carregando"></div>
+            </div>
+            <p class="code">@keyframes spin</p>
+          </article>
+
+          <article class="panel">
+            <h3>Skeleton</h3>
+            <div class="demo-area">
+              <div class="skeleton-card">
+                <div class="sk sk-avatar"></div>
+                <div class="sk sk-line"></div>
+                <div class="sk sk-line short"></div>
+              </div>
+            </div>
+            <p class="code">@keyframes skeleton</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 4) Pulse / Entrada / Shake ===== -->
+      <section class="card">
+        <h2>4) Pulse / Entrada / Shake</h2>
+
+        <div class="grid-3">
+          <article class="panel">
+            <h3>Pulso</h3>
+            <div class="demo-area center">
+              <div class="badge pulse">PULSE</div>
+            </div>
+            <p class="code">scale + opacity</p>
+          </article>
+
+          <article class="panel">
+            <h3>Entrada (fade + slide)</h3>
+            <div class="demo-area">
+              <div class="toast enter">Entrando com suavidade...</div>
+            </div>
+            <p class="code">opacity + translateY</p>
+          </article>
+
+          <article class="panel">
+            <h3>Notificação (shake)</h3>
+            <div class="demo-area center">
+              <button class="btn btn-shake" type="button">Passe o mouse</button>
+            </div>
+            <p class="code">hover → shake</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 5) Dropdown ===== -->
+      <section class="card">
+        <h2>5) Dropdown (hover)</h2>
+
+        <article class="panel">
+          <p class="desc">
+            O dropdown aparece com transição de <code>opacity</code> e
+            <code>transform</code>.
+          </p>
+
+          <div class="demo-area">
+            <div class="dropdown">
+              <button class="btn">Menu</button>
+
+              <div class="dropdown-panel">
+                <a href="#">Perfil</a>
+                <a href="#">Projetos</a>
+                <a href="#">Configurações</a>
+              </div>
+            </div>
+          </div>
+
+          <p class="code">hover no container → mostra painel</p>
+        </article>
+      </section>
+
+      <!-- ===== 6) Ripple ===== -->
+      <section class="card">
+        <h2>6) Ripple (clique)</h2>
+
+        <article class="panel">
+          <p class="desc">
+            Ripple simples com pseudo-elemento e <code>:active</code>.
+          </p>
+
+          <div class="demo-area center">
+            <button class="btn ripple">Clique aqui</button>
+          </div>
+
+          <p class="code">::after + scale + opacity</p>
+        </article>
+      </section>
+
+      <!-- ===== 7) Typing + Badge pop ===== -->
+      <section class="card">
+        <h2>7) Typing + Badge pop</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>Typing (efeito digitação)</h3>
+            <div class="demo-area">
+              <p class="typing">Estou digitando com steps() no CSS...</p>
+            </div>
+            <p class="code">@keyframes typing + steps()</p>
+          </article>
+
+          <article class="panel">
+            <h3>Badge pop</h3>
+            <div class="demo-area center">
+              <span class="badge pop">NOVO</span>
+            </div>
+            <p class="code">@keyframes pop</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 8) Notas ===== -->
+      <section class="card">
+        <h2>8) Boas práticas</h2>
+
+        <article class="panel">
+          <ul class="list">
+            <li>
+              <b>Prefira</b> animar <code>transform</code> e
+              <code>opacity</code>.
+            </li>
+            <li>
+              <b>Evite</b> animar <code>width</code>, <code>height</code>,
+              <code>top/left</code> com frequência.
+            </li>
+            <li>Interações de UI geralmente ficam boas em <b>180–350ms</b>.</li>
+            <li>Respeite <code>prefers-reduced-motion</code>.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <small>Dev-Studies • Autor: Jorge Simões</small>
+      </div>
+    </footer>
+  </body>
+</html>
