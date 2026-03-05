@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hierarquia Visual | Dev-Studies</title>
+    <link rel="stylesheet" href="hierarquia-visual.css" />
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <h1 class="page-title">Hierarquia Visual (Tipografia)</h1>
+        <p class="page-subtitle">
+          Visualize como <code>tamanho</code>, <code>peso</code>,
+          <code>cor</code>, <code>espaçamento</code> e
+          <code>largura de leitura</code> criam hierarquia.
+        </p>
+        <p class="hint">
+          Dica: redimensione a janela para ver o título fluido com
+          <code>clamp()</code>.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- ===== 1) ESCALA DE TÍTULOS ===== -->
+      <section class="card" id="escala">
+        <h2>1) Escala de títulos (H1 → H6)</h2>
+
+        <article class="panel">
+          <p class="desc">
+            Exemplo de escala tipográfica (tamanho + peso). Repare como o olho
+            entende rapidamente o que é mais importante.
+          </p>
+
+          <div class="sample">
+            <h1 class="scale h1">H1 — Título principal</h1>
+            <h2 class="scale h2">H2 — Subtítulo / Seção</h2>
+            <h3 class="scale h3">H3 — Título de subseção</h3>
+            <h4 class="scale h4">H4 — Título menor</h4>
+            <h5 class="scale h5">H5 — Rótulo / Categoria</h5>
+            <h6 class="scale h6">H6 — Nota / Complemento</h6>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 2) TEXTO PRINCIPAL + LARGURA IDEAL ===== -->
+      <section class="card" id="leitura">
+        <h2>2) Texto principal + largura ideal de leitura</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3 class="panel-title">Sem limite de largura</h3>
+            <p class="desc">
+              Texto “estica” e pode ficar cansativo de ler em telas grandes.
+            </p>
+
+            <div class="sample">
+              <p class="text no-limit">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
+                risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
+                nec, ultricies sed, dolor. Cras elementum ultrices diam.
+                Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+              </p>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3 class="panel-title">Com max-width (65ch)</h3>
+            <p class="desc">
+              Boa prática: entre <b>50–75 caracteres</b> por linha. Aqui usamos
+              <code>65ch</code>.
+            </p>
+
+            <div class="sample">
+              <p class="text limit">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non
+                risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing
+                nec, ultricies sed, dolor. Cras elementum ultrices diam.
+                Maecenas ligula massa, varius a, semper congue, euismod non, mi.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 3) PESO + COR (IMPORTÂNCIA) ===== -->
+      <section class="card" id="peso-cor">
+        <h2>3) Peso e cor para indicar importância</h2>
+
+        <article class="panel">
+          <p class="desc">
+            Use <code>font-weight</code> e <code>color</code> para guiar o
+            olhar: informação primária, secundária e destaque.
+          </p>
+
+          <div class="sample">
+            <p class="text">
+              <span class="primary">Primário:</span> texto mais importante e
+              legível.
+            </p>
+            <p class="text">
+              <span class="secondary">Secundário:</span> detalhes, observações e
+              metadados.
+            </p>
+            <p class="text">
+              <span class="highlight">Destaque:</span> palavras-chave e pontos
+              de atenção.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 4) ESPAÇAMENTO (RITMO) ===== -->
+      <section class="card" id="espacamento">
+        <h2>4) Espaçamento e “ritmo” visual</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3 class="panel-title">Pouco espaçamento</h3>
+            <p class="desc">Fica “apertado” e mais difícil de escanear.</p>
+
+            <div class="sample compact">
+              <h3 class="compact-title">Título</h3>
+              <p class="compact-text">
+                Parágrafo 1: texto curto para demonstração.
+              </p>
+              <p class="compact-text">
+                Parágrafo 2: texto curto para demonstração.
+              </p>
+              <p class="compact-text">
+                Parágrafo 3: texto curto para demonstração.
+              </p>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3 class="panel-title">Espaçamento adequado</h3>
+            <p class="desc">Separação ajuda leitura e hierarquia.</p>
+
+            <div class="sample comfortable">
+              <h3 class="comfortable-title">Título</h3>
+              <p class="comfortable-text">
+                Parágrafo 1: texto curto para demonstração.
+              </p>
+              <p class="comfortable-text">
+                Parágrafo 2: texto curto para demonstração.
+              </p>
+              <p class="comfortable-text">
+                Parágrafo 3: texto curto para demonstração.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 5) TÍTULO FLUIDO (CLAMP) ===== -->
+      <section class="card" id="responsivo">
+        <h2>5) Hierarquia responsiva (clamp)</h2>
+
+        <article class="panel">
+          <p class="desc">
+            O título abaixo usa <code>clamp(1.8rem, 4vw, 3rem)</code>.
+            Redimensione a tela para ver a hierarquia se adaptar.
+          </p>
+
+          <div class="sample">
+            <h3 class="fluid">Título fluido com clamp()</h3>
+            <p class="text limit muted">
+              Em telas pequenas, o título não fica gigante; em telas grandes,
+              não fica pequeno demais.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 6) LETTER-SPACING + CAPS ===== -->
+      <section class="card" id="caps">
+        <h2>6) Letter-spacing + uppercase (rótulos)</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3 class="panel-title">Rótulo com uppercase</h3>
+            <p class="desc">
+              Útil para categorias e badges (use com moderação).
+            </p>
+
+            <div class="sample">
+              <span class="label caps">Novidade</span>
+              <span class="label caps">Destaque</span>
+              <span class="label caps">Guia</span>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3 class="panel-title">Small-caps</h3>
+            <p class="desc">
+              Boa para títulos curtos. Pode reduzir legibilidade em textos
+              longos.
+            </p>
+
+            <div class="sample">
+              <p class="smallcaps">Small Caps: Jorge Simões — dev-studies</p>
+              <p class="text muted">
+                Comparação: o estilo muda sem ser “tudo maiúsculo”.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===== 7) EXEMPLO “ARTIGO” ===== -->
+      <section class="card" id="artigo">
+        <h2>7) Exemplo completo (layout de artigo)</h2>
+
+        <article class="panel">
+          <p class="desc">
+            Exemplo de hierarquia aplicada: título, subtítulo, metadados e corpo
+            com boa leitura.
+          </p>
+
+          <div class="article">
+            <h1 class="article-title">
+              Como criar hierarquia visual com tipografia
+            </h1>
+            <p class="article-meta">Atualizado: 2026 • Autor: Jorge Simões</p>
+
+            <h2 class="article-h2">O que é hierarquia visual?</h2>
+            <p class="article-p">
+              Hierarquia visual é a forma como organizamos informação para o
+              usuário entender o que é mais importante. Tipografia resolve boa
+              parte disso com tamanho, peso, espaçamento e contraste.
+            </p>
+
+            <h2 class="article-h2">Boas decisões tipográficas</h2>
+            <p class="article-p">
+              Limitar a largura de leitura, ajustar o line-height e usar escala
+              consistente de tamanhos torna a leitura mais confortável e
+              profissional.
+            </p>
+
+            <p class="article-callout">
+              Dica: se você precisar destacar algo, combine <b>peso</b> +
+              <b>cor</b> + <b>espaçamento</b>.
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <small>Dev-Studies • Autor: Jorge Simões</small>
+      </div>
+    </footer>
+  </body>
+</html>

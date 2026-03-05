@@ -1,0 +1,338 @@
+/*
+==================================================
+HIERARQUIA VISUAL NA TIPOGRAFIA
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/03-tipografia
+Arquivo: hierarquia-visual.css
+==================================================
+
+Hierarquia visual é a organização do conteúdo
+de forma que o usuário consiga identificar
+facilmente a importância das informações.
+
+Na tipografia, hierarquia é criada usando:
+
+• tamanho da fonte
+• peso da fonte
+• espaçamento
+• cor
+• alinhamento
+• contraste
+
+Esses elementos ajudam o usuário a entender
+rapidamente:
+
+1️⃣ títulos
+2️⃣ subtítulos
+3️⃣ conteúdo principal
+4️⃣ informações secundárias
+*/
+
+/*
+==================================================
+1. TÍTULO PRINCIPAL (H1)
+==================================================
+
+O título principal deve ser o elemento mais
+visível da página.
+*/
+
+.titulo-principal {
+  font-size: 2.5rem;
+
+  font-weight: 700;
+
+  margin-bottom: 1rem;
+}
+
+/*
+==================================================
+2. SUBTÍTULO (H2)
+==================================================
+
+Subtítulos organizam o conteúdo em seções.
+*/
+
+.subtitulo {
+  font-size: 2rem;
+
+  font-weight: 600;
+
+  margin-bottom: 0.75rem;
+}
+
+/*
+==================================================
+3. TÍTULO DE SEÇÃO (H3)
+==================================================
+
+Usado para subdividir conteúdo.
+*/
+
+.titulo-secao {
+  font-size: 1.5rem;
+
+  font-weight: 600;
+
+  margin-bottom: 0.5rem;
+}
+
+/*
+==================================================
+4. TEXTO PRINCIPAL
+==================================================
+
+O corpo do texto deve ter alta legibilidade.
+*/
+
+.texto {
+  font-size: 1rem;
+
+  line-height: 1.6;
+
+  max-width: 65ch;
+}
+
+/*
+==================================================
+5. TEXTO SECUNDÁRIO
+==================================================
+
+Informações menos importantes podem ter
+menor destaque visual.
+*/
+
+.texto-secundario {
+  font-size: 0.9rem;
+
+  color: #666;
+}
+
+/*
+==================================================
+6. DESTAQUE DE TEXTO
+==================================================
+
+Podemos destacar partes importantes usando:
+
+• peso
+• cor
+• tamanho
+*/
+
+.texto-destaque {
+  font-weight: 600;
+
+  color: #222;
+}
+
+/*
+==================================================
+7. CONTRASTE VISUAL
+==================================================
+
+Cores ajudam a reforçar hierarquia visual.
+*/
+
+.titulo-escuro {
+  color: #111;
+}
+
+.texto-claro {
+  color: #777;
+}
+
+/*
+==================================================
+8. ESPAÇAMENTO ENTRE ELEMENTOS
+==================================================
+
+Espaçamento melhora leitura e separa blocos
+de conteúdo.
+*/
+
+.bloco-texto {
+  margin-bottom: 1.5rem;
+}
+
+/*
+==================================================
+9. HIERARQUIA COM FONT-WEIGHT
+==================================================
+*/
+
+.titulo-bold {
+  font-weight: 700;
+}
+
+.titulo-semi {
+  font-weight: 600;
+}
+
+.texto-normal {
+  font-weight: 400;
+}
+
+/*
+==================================================
+10. HIERARQUIA COM TAMANHO
+==================================================
+*/
+
+.h1 {
+  font-size: 2.5rem;
+}
+
+.h2 {
+  font-size: 2rem;
+}
+
+.h3 {
+  font-size: 1.5rem;
+}
+
+.h4 {
+  font-size: 1.25rem;
+}
+
+/*
+==================================================
+11. HIERARQUIA COM LETTER-SPACING
+==================================================
+*/
+
+.titulo-maiusculo {
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+/*
+==================================================
+12. USANDO VARIÁVEIS CSS
+==================================================
+
+Podemos definir uma escala tipográfica
+para manter consistência.
+*/
+
+:root {
+  --font-xs: 0.8rem;
+
+  --font-sm: 0.9rem;
+
+  --font-base: 1rem;
+
+  --font-md: 1.25rem;
+
+  --font-lg: 1.5rem;
+
+  --font-xl: 2rem;
+
+  --font-xxl: 2.5rem;
+}
+
+.titulo-grande {
+  font-size: var(--font-xxl);
+}
+
+.subtitulo-grande {
+  font-size: var(--font-xl);
+}
+
+.texto-base {
+  font-size: var(--font-base);
+}
+
+/*
+==================================================
+13. HIERARQUIA RESPONSIVA
+==================================================
+
+A hierarquia pode mudar dependendo
+do tamanho da tela.
+*/
+
+.titulo-responsivo {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+/*
+==================================================
+14. EXEMPLO DE ESTRUTURA TIPOGRÁFICA
+==================================================
+*/
+
+.layout-artigo {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.layout-artigo h1 {
+  font-size: 2.5rem;
+
+  margin-bottom: 1rem;
+}
+
+.layout-artigo h2 {
+  font-size: 2rem;
+
+  margin-top: 2rem;
+
+  margin-bottom: 0.5rem;
+}
+
+.layout-artigo p {
+  font-size: 1rem;
+
+  line-height: 1.6;
+
+  margin-bottom: 1rem;
+}
+
+/*
+==================================================
+15. BOAS PRÁTICAS
+==================================================
+
+• Use poucos níveis de títulos
+
+• Crie uma escala tipográfica consistente
+
+• Use espaçamento para separar blocos
+
+• Use contraste para diferenciar importância
+
+• Limite largura do texto (60–70 caracteres)
+
+• Use line-height adequado
+
+• Combine tamanho + peso + cor para criar
+hierarquia visual clara
+*/
+
+/*
+==================================================
+RESUMO
+==================================================
+
+Hierarquia visual é construída usando:
+
+font-size
+→ define importância
+
+font-weight
+→ cria destaque
+
+color
+→ diferencia níveis
+
+spacing
+→ separa blocos
+
+line-height
+→ melhora legibilidade
+
+max-width
+→ controla largura da leitura
+*/

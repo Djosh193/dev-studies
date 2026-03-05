@@ -1,0 +1,281 @@
+/*
+==================================================
+HIERARQUIA VISUAL (DEMO)
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/03-tipografia
+Arquivo: hierarquia-visual-demo.css
+==================================================
+*/
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  line-height: 1.5;
+  background: #0b0f17;
+  color: #e9eefc;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+code {
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.muted {
+  color: rgba(233, 238, 252, 0.75);
+}
+
+/* ===== Header / Footer ===== */
+.page-header {
+  padding: 28px 0 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.page-title {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.page-subtitle {
+  margin: 6px 0;
+  color: rgba(233, 238, 252, 0.85);
+}
+
+.hint {
+  font-size: 14px;
+  color: rgba(233, 238, 252, 0.7);
+}
+
+.page-footer {
+  margin-top: 26px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(233, 238, 252, 0.7);
+}
+
+/* ===== Cards ===== */
+main {
+  padding: 18px 0 38px;
+}
+
+.card {
+  margin: 16px 0;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.panel {
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.panel-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.desc {
+  margin: 0 0 12px;
+  color: rgba(233, 238, 252, 0.8);
+  font-size: 14px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Samples ===== */
+.sample {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* 1) scale */
+.scale {
+  margin: 8px 0;
+}
+
+.h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+.h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.h3 {
+  font-size: 1.5rem;
+  font-weight: 650;
+}
+.h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  opacity: 0.95;
+}
+.h6 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* 2) text */
+.text {
+  margin: 10px 0;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.no-limit {
+  max-width: none;
+}
+
+.limit {
+  max-width: 65ch;
+}
+
+/* 3) weight + color */
+.primary {
+  font-weight: 800;
+  color: rgba(233, 238, 252, 0.95);
+}
+
+.secondary {
+  font-weight: 600;
+  color: rgba(233, 238, 252, 0.7);
+}
+
+.highlight {
+  font-weight: 800;
+  color: rgba(96, 165, 250, 0.95);
+}
+
+/* 4) spacing */
+.compact-title,
+.comfortable-title {
+  margin: 0 0 6px;
+  font-weight: 800;
+}
+
+.compact-text {
+  margin: 4px 0;
+}
+
+.comfortable-text {
+  margin: 12px 0;
+}
+
+/* 5) clamp */
+.fluid {
+  margin: 0 0 6px;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+/* 6) labels */
+.label {
+  display: inline-block;
+  margin-right: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 800;
+}
+
+.caps {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+}
+
+.smallcaps {
+  margin: 0 0 6px;
+  font-variant: small-caps;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* 7) article layout */
+.article {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.18);
+  padding: 14px;
+}
+
+.article-title {
+  margin: 0 0 6px;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+
+.article-meta {
+  margin: 0 0 18px;
+  font-size: 0.9rem;
+  color: rgba(233, 238, 252, 0.65);
+}
+
+.article-h2 {
+  margin: 18px 0 8px;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.article-p {
+  margin: 10px 0;
+  max-width: 65ch;
+  line-height: 1.7;
+  color: rgba(233, 238, 252, 0.88);
+}
+
+.article-callout {
+  margin: 16px 0 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  background: rgba(96, 165, 250, 0.12);
+  max-width: 65ch;
+}

@@ -1,0 +1,360 @@
+/*
+==================================================
+FONTES NO CSS
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/03-tipografia
+Arquivo: fontes.css
+==================================================
+
+Fontes controlam a aparência do texto em uma página.
+
+No CSS podemos definir:
+
+• tipo da fonte
+• tamanho
+• peso
+• estilo
+• carregamento de fontes externas
+• fontes customizadas
+
+A propriedade principal para definir fontes é:
+
+font-family
+*/
+
+/*
+==================================================
+1. FONT-FAMILY
+==================================================
+
+Define qual fonte será usada no elemento.
+*/
+
+.exemplo-fonte {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+Boa prática:
+
+Sempre incluir fontes alternativas (fallback).
+
+Se a primeira fonte não estiver disponível,
+o navegador usa a próxima da lista.
+*/
+
+body {
+  font-family: "Inter", "Roboto", Arial, sans-serif;
+}
+
+/*
+==================================================
+2. FAMÍLIAS DE FONTES
+==================================================
+
+Existem cinco famílias genéricas principais:
+*/
+
+.fonte-serif {
+  font-family: serif;
+}
+
+.fonte-sans-serif {
+  font-family: sans-serif;
+}
+
+.fonte-monospace {
+  font-family: monospace;
+}
+
+.fonte-cursive {
+  font-family: cursive;
+}
+
+.fonte-fantasy {
+  font-family: fantasy;
+}
+
+/*
+Resumo:
+
+serif
+→ fontes com serifa (ex: Times New Roman)
+
+sans-serif
+→ fontes sem serifa (ex: Arial)
+
+monospace
+→ cada caractere ocupa mesmo espaço
+*/
+
+/*
+==================================================
+3. FONT-SIZE
+==================================================
+
+Define o tamanho da fonte.
+*/
+
+.texto-pequeno {
+  font-size: 0.8rem;
+}
+
+.texto-normal {
+  font-size: 1rem;
+}
+
+.texto-grande {
+  font-size: 2rem;
+}
+
+/*
+Unidades recomendadas:
+
+rem
+em
+vw
+*/
+
+.titulo-responsivo {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+/*
+==================================================
+4. FONT-WEIGHT
+==================================================
+
+Define a espessura da fonte.
+*/
+
+.peso-leve {
+  font-weight: 300;
+}
+
+.peso-normal {
+  font-weight: 400;
+}
+
+.peso-medio {
+  font-weight: 500;
+}
+
+.peso-bold {
+  font-weight: 700;
+}
+
+/*
+Valores comuns:
+
+100 → Thin
+300 → Light
+400 → Normal
+500 → Medium
+600 → Semi-bold
+700 → Bold
+900 → Black
+*/
+
+/*
+==================================================
+5. FONT-STYLE
+==================================================
+
+Define o estilo da fonte.
+*/
+
+.texto-italico {
+  font-style: italic;
+}
+
+.texto-normal-estilo {
+  font-style: normal;
+}
+
+/*
+==================================================
+6. FONT-VARIANT
+==================================================
+
+Usado para pequenas variações tipográficas.
+*/
+
+.texto-small-caps {
+  font-variant: small-caps;
+}
+
+/*
+==================================================
+7. SHORTHAND FONT
+==================================================
+
+A propriedade "font" permite definir várias
+propriedades ao mesmo tempo.
+*/
+
+.shorthand-font {
+  font:
+    italic 700 1.5rem "Roboto",
+    sans-serif;
+}
+
+/*
+Ordem:
+
+font-style
+font-weight
+font-size
+font-family
+*/
+
+/*
+==================================================
+8. GOOGLE FONTS
+==================================================
+
+Podemos importar fontes externas usando:
+
+<link> no HTML
+
+ou
+
+@import no CSS
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+.fonte-google {
+  font-family: "Roboto", sans-serif;
+}
+
+/*
+==================================================
+9. FONTES CUSTOMIZADAS
+==================================================
+
+Podemos carregar fontes locais usando
+@font-face.
+*/
+
+@font-face {
+  font-family: "MinhaFonte";
+
+  src:
+    url("../fonts/minha-fonte.woff2") format("woff2"),
+    url("../fonts/minha-fonte.woff") format("woff");
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fonte-customizada {
+  font-family: "MinhaFonte", sans-serif;
+}
+
+/*
+==================================================
+10. FONT-DISPLAY
+==================================================
+
+Define como a fonte é exibida enquanto
+está carregando.
+*/
+
+@font-face {
+  font-family: "FonteRapida";
+
+  src: url("../fonts/fonte.woff2") format("woff2");
+
+  font-display: swap;
+}
+
+/*
+Valores:
+
+auto
+swap
+block
+fallback
+optional
+*/
+
+/*
+==================================================
+11. FONTES PARA CÓDIGO
+==================================================
+
+Fontes monoespaçadas são usadas
+em código e programação.
+*/
+
+.codigo {
+  font-family: "Courier New", Courier, monospace;
+}
+
+/*
+==================================================
+12. FONTES EM SISTEMA (SYSTEM FONTS)
+==================================================
+
+Podemos usar fontes nativas do sistema
+para melhorar performance.
+*/
+
+.font-system {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+}
+
+/*
+==================================================
+13. BOAS PRÁTICAS
+==================================================
+
+• Use no máximo 2 fontes no projeto
+
+• Sempre defina fallback fonts
+
+• Prefira unidades rem
+
+• Use Google Fonts ou fontes locais otimizadas
+
+• Utilize font-display: swap para evitar
+  atraso no carregamento
+
+• Prefira fontes sans-serif para interfaces
+
+• Use fontes monospace para código
+*/
+
+/*
+==================================================
+RESUMO
+==================================================
+
+font-family
+→ define a fonte
+
+font-size
+→ define o tamanho
+
+font-weight
+→ define a espessura
+
+font-style
+→ define estilo (italic)
+
+font-variant
+→ variações tipográficas
+
+font
+→ shorthand
+
+@font-face
+→ carrega fontes personalizadas
+
+Google Fonts
+→ fontes externas
+*/
