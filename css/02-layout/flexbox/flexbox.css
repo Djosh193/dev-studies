@@ -1,0 +1,309 @@
+/*
+==================================================
+FLEXBOX (DEMO VISUAL)
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/02-layout
+Arquivo: flexbox-demo.css
+==================================================
+*/
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  line-height: 1.5;
+  background: #0b0f17;
+  color: #e9eefc;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+code {
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ===== Header / Footer ===== */
+.page-header {
+  padding: 28px 0 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.page-header p {
+  margin: 6px 0;
+  color: rgba(233, 238, 252, 0.85);
+}
+
+.hint {
+  font-size: 14px;
+  color: rgba(233, 238, 252, 0.7);
+}
+
+.page-footer {
+  margin-top: 26px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(233, 238, 252, 0.7);
+}
+
+/* ===== Cards ===== */
+main {
+  padding: 18px 0 38px;
+}
+
+.card {
+  margin: 16px 0;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.panel {
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.panel h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.desc {
+  margin: 0 0 12px;
+  color: rgba(233, 238, 252, 0.8);
+  font-size: 14px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Demo area ===== */
+.demo-area {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.demo-area.tall {
+  min-height: 200px;
+}
+
+/* ===== Flex base ===== */
+.flex.demo {
+  display: flex;
+  border-radius: 12px;
+}
+
+/* ===== Itens ===== */
+.item {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.w90 {
+  width: 90px;
+}
+
+.h40 {
+  height: 40px;
+  display: grid;
+  place-items: center;
+}
+
+.h55 {
+  height: 55px;
+  display: grid;
+  place-items: center;
+}
+
+.h70 {
+  height: 70px;
+  display: grid;
+  place-items: center;
+}
+
+.wide {
+  width: 160px;
+  text-align: center;
+}
+
+/* ===== 1) direction ===== */
+.direction-row {
+  flex-direction: row;
+  gap: 12px;
+}
+
+.direction-column {
+  flex-direction: column;
+  gap: 12px;
+}
+
+.direction-row-reverse {
+  flex-direction: row-reverse;
+  gap: 12px;
+}
+
+.direction-column-reverse {
+  flex-direction: column-reverse;
+  gap: 12px;
+}
+
+/* ===== 2) justify-content ===== */
+.justify-start {
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.justify-center {
+  justify-content: center;
+  gap: 12px;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+/* ===== 3) align-items ===== */
+.align-start {
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.align-center {
+  align-items: center;
+  gap: 12px;
+}
+
+.align-end {
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.align-stretch {
+  align-items: stretch;
+  gap: 12px;
+}
+
+/* ===== 4) wrap + gap ===== */
+.nowrap {
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.gap {
+  gap: 12px;
+}
+
+/* ===== 5) flex shorthand ===== */
+.flex-basis {
+  gap: 12px;
+}
+
+.flex-1 {
+  flex: 1 1 160px;
+  text-align: center;
+}
+
+.grow-demo {
+  gap: 12px;
+}
+
+.grow-1 {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.grow-2 {
+  flex-grow: 2;
+  text-align: center;
+}
+
+.shrink-demo {
+  gap: 12px;
+}
+
+.shrink-1 {
+  flex-shrink: 1;
+}
+
+.shrink-0 {
+  flex-shrink: 0;
+}
+
+/* ===== 6) order + align-self ===== */
+.order-demo {
+  gap: 12px;
+}
+
+.order-1 {
+  order: 1;
+}
+
+.order-2 {
+  order: 2;
+}
+
+.order-3 {
+  order: 3;
+}
+
+.align-self-demo {
+  align-items: center;
+  gap: 12px;
+}
+
+.self-end {
+  align-self: flex-end;
+}

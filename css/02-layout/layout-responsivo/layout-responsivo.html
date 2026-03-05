@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Responsivo | Dev-Studies</title>
+    <link rel="stylesheet" href="layout-responsivo.css" />
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <h1>Layout Responsivo (Visualizador)</h1>
+        <p>
+          Abra o DevTools (F12) e mude o tamanho da tela para ver:
+          <code>media queries</code>, <code>flex-wrap</code>, <code>grid</code>,
+          <code>auto-fit/minmax</code>, imagens responsivas e tipografia com
+          <code>clamp()</code>.
+        </p>
+        <p class="hint">
+          Breakpoints desta demo: <b>900px</b> (tablet) e
+          <b>600px</b> (celular).
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- ====== 1) UNIDADES RESPONSIVAS ====== -->
+      <section class="card" id="unidades">
+        <h2>1) Unidades responsivas</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>% (percentual)</h3>
+            <p class="desc">
+              A caixa tem <code>width: 50%</code> do seu container.
+            </p>
+
+            <div class="demo-area">
+              <div class="box percent">50%</div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>vw (viewport width)</h3>
+            <p class="desc">
+              A caixa tem <code>width: 50vw</code> (metade da tela).
+            </p>
+
+            <div class="demo-area">
+              <div class="box vw">50vw</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ====== 2) TIPOGRAFIA RESPONSIVA ====== -->
+      <section class="card" id="tipografia">
+        <h2>2) Tipografia responsiva com clamp()</h2>
+
+        <article class="panel">
+          <p class="desc">
+            O título usa <code>font-size: clamp(1.5rem, 4vw, 3rem)</code>.
+            Redimensione a tela e observe o texto crescer/diminuir.
+          </p>
+
+          <div class="demo-area">
+            <h3 class="fluid-title">Eu mudo com o tamanho da tela 😄</h3>
+            <p class="muted">
+              O <code>clamp()</code> define um mínimo, um valor “ideal” baseado
+              no viewport e um máximo.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- ====== 3) MEDIA QUERIES (PADDING MOBILE-FIRST) ====== -->
+      <section class="card" id="media-queries">
+        <h2>3) Media Queries + Mobile First</h2>
+
+        <article class="panel">
+          <p class="desc">
+            Este bloco começa com padding pequeno (mobile) e aumenta em telas
+            maiores usando <code>min-width</code>.
+          </p>
+
+          <div class="demo-area">
+            <div class="mobile-first-box">
+              <strong>Mobile First</strong>
+              <p class="muted">
+                Diminua e aumente a janela para ver o
+                <code>padding</code> mudando.
+              </p>
+              <ul class="muted">
+                <li>Base: mobile</li>
+                <li>≥ 768px: tablet/desktop</li>
+                <li>≥ 1200px: telas grandes</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ====== 4) FLEX RESPONSIVO (WRAP + GAP) ====== -->
+      <section class="card" id="flex">
+        <h2>4) Flexbox responsivo (wrap + gap)</h2>
+
+        <article class="panel">
+          <p class="desc">
+            Container com <code>display: flex</code>,
+            <code>flex-wrap: wrap</code>, <code>gap</code> e cards com
+            <code>flex: 1 1 240px</code>.
+          </p>
+
+          <div class="demo-area">
+            <div class="flex-cards">
+              <div class="card-item">Card 1</div>
+              <div class="card-item">Card 2</div>
+              <div class="card-item">Card 3</div>
+              <div class="card-item">Card 4</div>
+              <div class="card-item">Card 5</div>
+              <div class="card-item">Card 6</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ====== 5) GRID RESPONSIVO (MEDIA QUERIES) ====== -->
+      <section class="card" id="grid-media">
+        <h2>5) Grid responsivo com Media Queries</h2>
+
+        <article class="panel">
+          <p class="desc">
+            Começa com 4 colunas; em ≤ 900px vira 2; em ≤ 600px vira 1.
+          </p>
+
+          <div class="demo-area">
+            <div class="grid-media">
+              <div class="tile">1</div>
+              <div class="tile">2</div>
+              <div class="tile">3</div>
+              <div class="tile">4</div>
+              <div class="tile">5</div>
+              <div class="tile">6</div>
+              <div class="tile">7</div>
+              <div class="tile">8</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ====== 6) GRID AUTO-FIT + MINMAX ====== -->
+      <section class="card" id="auto-fit">
+        <h2>6) Grid moderno: auto-fit + minmax()</h2>
+
+        <article class="panel">
+          <p class="desc">
+            <code>repeat(auto-fit, minmax(200px, 1fr))</code> ajusta a
+            quantidade de colunas automaticamente.
+          </p>
+
+          <div class="demo-area">
+            <div class="grid-auto">
+              <div class="tile">Card A</div>
+              <div class="tile">Card B</div>
+              <div class="tile">Card C</div>
+              <div class="tile">Card D</div>
+              <div class="tile">Card E</div>
+              <div class="tile">Card F</div>
+              <div class="tile">Card G</div>
+              <div class="tile">Card H</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ====== 7) IMAGEM RESPONSIVA ====== -->
+      <section class="card" id="imagens">
+        <h2>7) Imagens responsivas</h2>
+
+        <article class="panel">
+          <p class="desc">
+            A imagem usa <code>max-width: 100%</code> e
+            <code>height: auto</code>. Redimensione a janela e observe a imagem
+            se ajustar.
+          </p>
+
+          <div class="demo-area">
+            <div class="img-wrap">
+              <!-- SVG inline (não precisa de arquivo externo) -->
+              <img
+                class="img-responsive"
+                alt="Imagem responsiva (placeholder)"
+                src="data:image/svg+xml;utf8,
+                <svg xmlns='http://www.w3.org/2000/svg' width='1200' height='600'>
+                  <defs>
+                    <linearGradient id='g' x1='0' x2='1'>
+                      <stop offset='0' stop-color='%2360a5fa'/>
+                      <stop offset='1' stop-color='%23a78bfa'/>
+                    </linearGradient>
+                  </defs>
+                  <rect width='1200' height='600' fill='url(%23g)'/>
+                  <text x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle'
+                        font-family='Arial' font-size='54' fill='white'>
+                    Imagem Responsiva (max-width: 100%25)
+                  </text>
+                </svg>"
+              />
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ====== 8) CONTAINER RESPONSIVO ====== -->
+      <section class="card" id="container">
+        <h2>8) Container responsivo (max-width + width)</h2>
+
+        <article class="panel">
+          <p class="desc">
+            Este container demonstra a ideia de <code>width: 90%</code> +
+            <code>max-width: 1200px</code> + <code>margin: 0 auto</code>.
+          </p>
+
+          <div class="demo-area">
+            <div class="container-demo">
+              <div class="muted">
+                Eu paro de crescer em <b>1200px</b>, mas em telas menores fico
+                em <b>90%</b>.
+              </div>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <small>Dev-Studies • Autor: Jorge Simões</small>
+      </div>
+    </footer>
+  </body>
+</html>

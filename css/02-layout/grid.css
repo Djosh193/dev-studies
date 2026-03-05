@@ -1,0 +1,401 @@
+/*
+==================================================
+CSS GRID LAYOUT
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/02-layout
+==================================================
+
+CSS Grid é um sistema moderno de layout bidimensional
+(linhas e colunas).
+
+Diferente do Flexbox, que trabalha em um eixo
+(horizontal OU vertical), o Grid trabalha em dois
+eixos ao mesmo tempo.
+
+Principais conceitos:
+
+• Grid Container
+• Grid Items
+• Linhas (rows)
+• Colunas (columns)
+• Tracks
+• Gaps
+• Grid Areas
+*/
+
+/*
+==================================================
+1. GRID CONTAINER
+==================================================
+
+Para ativar o Grid, usamos:
+
+display: grid
+*/
+
+.container-grid {
+  display: grid;
+}
+
+/*
+==================================================
+2. GRID TEMPLATE COLUMNS
+==================================================
+
+Define as colunas do grid.
+*/
+
+.grid-3-colunas {
+  display: grid;
+
+  grid-template-columns: 200px 200px 200px;
+}
+
+/*
+Exemplo com frações (fr)
+fr = fraction
+*/
+
+.grid-fr {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*
+Mistura de unidades
+*/
+
+.grid-misto {
+  display: grid;
+
+  grid-template-columns: 200px 1fr 2fr;
+}
+
+/*
+==================================================
+3. GRID TEMPLATE ROWS
+==================================================
+
+Define as linhas do grid
+*/
+
+.grid-linhas {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 200px 150px;
+}
+
+/*
+==================================================
+4. GAP
+==================================================
+
+Define o espaço entre linhas e colunas.
+*/
+
+.grid-gap {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+/*
+Gap específico
+*/
+
+.grid-gap-avancado {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  column-gap: 30px;
+  row-gap: 10px;
+}
+
+/*
+==================================================
+5. REPEAT()
+==================================================
+
+Função que simplifica repetição.
+*/
+
+.grid-repeat {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/*
+==================================================
+6. GRID ITEMS
+==================================================
+
+Os filhos diretos do container grid
+são chamados de grid items.
+*/
+
+.grid-item {
+  background: lightblue;
+  padding: 20px;
+  border: 1px solid #333;
+}
+
+/*
+==================================================
+7. POSICIONAMENTO DE ITEMS
+==================================================
+
+Podemos posicionar elementos no grid.
+*/
+
+.item-posicao {
+  grid-column: 1 / 3;
+
+  grid-row: 1 / 2;
+}
+
+/*
+grid-column
+
+Define em quais colunas o item começa e termina
+*/
+
+.item-span-colunas {
+  grid-column: span 2;
+}
+
+/*
+grid-row
+
+Define em quais linhas o item começa e termina
+*/
+
+.item-span-linhas {
+  grid-row: span 2;
+}
+
+/*
+==================================================
+8. GRID AREAS
+==================================================
+
+Permite criar layouts nomeando regiões
+do grid.
+*/
+
+.layout-site {
+  display: grid;
+
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 80px 1fr 60px;
+
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
+/*
+Elementos das áreas
+*/
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/*
+==================================================
+9. JUSTIFY E ALIGN
+==================================================
+
+Controlam alinhamento dentro do grid
+*/
+
+.grid-alinhamento {
+  display: grid;
+
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(2, 150px);
+
+  justify-content: center;
+
+  align-content: center;
+}
+
+/*
+Alinhamento dos items
+*/
+
+.grid-items-alinhados {
+  display: grid;
+
+  grid-template-columns: repeat(3, 150px);
+
+  justify-items: center;
+
+  align-items: center;
+}
+
+/*
+==================================================
+10. AUTO-FIT E AUTO-FILL
+==================================================
+
+Muito usados em layouts responsivos.
+*/
+
+.grid-auto-fit {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/*
+Explicação:
+
+minmax(200px, 1fr)
+
+mínimo: 200px
+máximo: 1fr
+*/
+
+/*
+==================================================
+11. GRID RESPONSIVO
+==================================================
+
+Podemos combinar Grid com Media Queries.
+*/
+
+.grid-responsivo {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .grid-responsivo {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid-responsivo {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*
+==================================================
+12. EXEMPLO DE LAYOUT COMPLETO
+==================================================
+*/
+
+.site-layout {
+  display: grid;
+
+  grid-template-columns: 250px 1fr;
+
+  grid-template-rows:
+    80px
+    1fr
+    60px;
+
+  grid-template-areas:
+    "header header"
+    "sidebar content"
+    "footer footer";
+
+  min-height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  background: #333;
+  color: white;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #ddd;
+}
+
+.content {
+  grid-area: content;
+  background: #f4f4f4;
+}
+
+.footer {
+  grid-area: footer;
+  background: #222;
+  color: white;
+}
+
+/*
+==================================================
+13. BOAS PRÁTICAS
+==================================================
+
+• Use Grid para layouts complexos
+
+• Use Flexbox para alinhamentos simples
+
+• Combine Grid + Flexbox
+
+• Prefira fr em vez de px para layouts fluidos
+
+• Use auto-fit + minmax para responsividade
+
+• Nomeie áreas com grid-template-areas
+para melhorar legibilidade
+*/
+
+/*
+==================================================
+RESUMO
+==================================================
+
+display: grid
+ativa o grid
+
+grid-template-columns
+define colunas
+
+grid-template-rows
+define linhas
+
+gap
+define espaçamento
+
+grid-column
+controla largura do item
+
+grid-row
+controla altura do item
+
+grid-template-areas
+cria layouts nomeados
+
+auto-fit + minmax
+permite grids responsivos
+*/

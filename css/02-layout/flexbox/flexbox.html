@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox | Dev-Studies</title>
+    <link rel="stylesheet" href="flexbox.css" />
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="container">
+        s
+        <h1>Flexbox (Visualizador)</h1>
+        <p>
+          Exemplos práticos de <code>flex-direction</code>,
+          <code>justify-content</code>, <code>align-items</code>,
+          <code>flex-wrap</code>, <code>gap</code>,
+          <code>flex</code> (grow/shrink/basis), <code>order</code> e
+          <code>align-self</code>.
+        </p>
+        <p class="hint">Dica: inspecione os elementos no DevTools (F12).</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- =================== 1) FLEX-DIRECTION =================== -->
+      <section class="card">
+        <h2>1) flex-direction</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>row (padrão)</h3>
+            <p class="desc"><code>flex-direction: row;</code></p>
+
+            <div class="demo-area">
+              <div class="flex demo direction-row">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>column</h3>
+            <p class="desc"><code>flex-direction: column;</code></p>
+
+            <div class="demo-area">
+              <div class="flex demo direction-column">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>row-reverse</h3>
+            <p class="desc"><code>flex-direction: row-reverse;</code></p>
+
+            <div class="demo-area">
+              <div class="flex demo direction-row-reverse">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>column-reverse</h3>
+            <p class="desc"><code>flex-direction: column-reverse;</code></p>
+
+            <div class="demo-area">
+              <div class="flex demo direction-column-reverse">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =================== 2) JUSTIFY-CONTENT =================== -->
+      <section class="card">
+        <h2>2) justify-content</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>flex-start</h3>
+            <p class="desc"><code>justify-content: flex-start;</code></p>
+
+            <div class="demo-area">
+              <div class="flex demo justify-start">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>center</h3>
+            <p class="desc"><code>justify-content: center;</code></p>
+
+            <div class="demo-area">
+              <div class="flex demo justify-center">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>space-between</h3>
+            <p class="desc"><code>justify-content: space-between;</code></p>
+
+            <div class="demo-area">
+              <div class="flex demo justify-between">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>space-evenly</h3>
+            <p class="desc"><code>justify-content: space-evenly;</code></p>
+
+            <div class="demo-area">
+              <div class="flex demo justify-evenly">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =================== 3) ALIGN-ITEMS =================== -->
+      <section class="card">
+        <h2>3) align-items</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>flex-start</h3>
+            <p class="desc"><code>align-items: flex-start;</code></p>
+
+            <div class="demo-area tall">
+              <div class="flex demo align-start">
+                <div class="item h40">1</div>
+                <div class="item h70">2</div>
+                <div class="item h55">3</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>center</h3>
+            <p class="desc"><code>align-items: center;</code></p>
+
+            <div class="demo-area tall">
+              <div class="flex demo align-center">
+                <div class="item h40">1</div>
+                <div class="item h70">2</div>
+                <div class="item h55">3</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>flex-end</h3>
+            <p class="desc"><code>align-items: flex-end;</code></p>
+
+            <div class="demo-area tall">
+              <div class="flex demo align-end">
+                <div class="item h40">1</div>
+                <div class="item h70">2</div>
+                <div class="item h55">3</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>stretch (padrão)</h3>
+            <p class="desc"><code>align-items: stretch;</code></p>
+
+            <div class="demo-area tall">
+              <div class="flex demo align-stretch">
+                <div class="item w90">A</div>
+                <div class="item w90">B</div>
+                <div class="item w90">C</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =================== 4) FLEX-WRAP + GAP =================== -->
+      <section class="card">
+        <h2>4) flex-wrap + gap</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>nowrap (padrão)</h3>
+            <p class="desc"><code>flex-wrap: nowrap;</code></p>
+
+            <div class="demo-area">
+              <div class="flex demo nowrap">
+                <div class="item wide">1</div>
+                <div class="item wide">2</div>
+                <div class="item wide">3</div>
+                <div class="item wide">4</div>
+                <div class="item wide">5</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>wrap + gap</h3>
+            <p class="desc">
+              <code>flex-wrap: wrap;</code> + <code>gap: 12px;</code>
+            </p>
+
+            <div class="demo-area">
+              <div class="flex demo wrap gap">
+                <div class="item wide">1</div>
+                <div class="item wide">2</div>
+                <div class="item wide">3</div>
+                <div class="item wide">4</div>
+                <div class="item wide">5</div>
+                <div class="item wide">6</div>
+                <div class="item wide">7</div>
+                <div class="item wide">8</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =================== 5) FLEX (grow/shrink/basis) =================== -->
+      <section class="card">
+        <h2>5) flex: grow shrink basis</h2>
+
+        <article class="panel">
+          <h3>flex: 1 1 160px</h3>
+          <p class="desc">
+            Cada item tenta ter 160px, pode crescer (1) e pode encolher (1).
+          </p>
+
+          <div class="demo-area">
+            <div class="flex demo flex-basis">
+              <div class="item flex-1">flex: 1 1 160px</div>
+              <div class="item flex-1">flex: 1 1 160px</div>
+              <div class="item flex-1">flex: 1 1 160px</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>grow diferente (1 vs 2)</h3>
+          <p class="desc">
+            O item do meio cresce o dobro: <code>flex-grow: 2</code>.
+          </p>
+
+          <div class="demo-area">
+            <div class="flex demo grow-demo">
+              <div class="item grow-1">grow: 1</div>
+              <div class="item grow-2">grow: 2</div>
+              <div class="item grow-1">grow: 1</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>shrink (encolhimento)</h3>
+          <p class="desc">
+            O item do meio não encolhe: <code>flex-shrink: 0</code>.
+          </p>
+
+          <div class="demo-area">
+            <div class="flex demo shrink-demo">
+              <div class="item shrink-1 wide">shrink: 1</div>
+              <div class="item shrink-0 wide">shrink: 0</div>
+              <div class="item shrink-1 wide">shrink: 1</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- =================== 6) ORDER + ALIGN-SELF =================== -->
+      <section class="card">
+        <h2>6) order + align-self</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>order</h3>
+            <p class="desc">A ordem visual muda sem mudar o HTML.</p>
+
+            <div class="demo-area">
+              <div class="flex demo order-demo">
+                <div class="item order-3">1 (order 3)</div>
+                <div class="item order-1">2 (order 1)</div>
+                <div class="item order-2">3 (order 2)</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>align-self</h3>
+            <p class="desc">Um item se alinha diferente dos demais.</p>
+
+            <div class="demo-area tall">
+              <div class="flex demo align-self-demo">
+                <div class="item h40">A</div>
+                <div class="item h40 self-end">B (end)</div>
+                <div class="item h40">C</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <div class="container">
+        <small>Dev-Studies • Autor: Jorge Simões</small>
+      </div>
+    </footer>
+  </body>
+</html>

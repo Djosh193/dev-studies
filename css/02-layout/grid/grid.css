@@ -1,0 +1,252 @@
+/*
+==================================================
+CSS GRID (DEMO VISUAL)
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/02-layout
+Arquivo: grid-demo.css
+==================================================
+*/
+
+/* ===== Reset / base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  line-height: 1.5;
+  background: #0b0f17;
+  color: #e9eefc;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+code {
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ===== Header / Footer ===== */
+.page-header {
+  padding: 28px 0 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.page-header p {
+  margin: 6px 0;
+  color: rgba(233, 238, 252, 0.85);
+}
+
+.hint {
+  font-size: 14px;
+  color: rgba(233, 238, 252, 0.7);
+}
+
+.page-footer {
+  margin-top: 26px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(233, 238, 252, 0.7);
+}
+
+/* ===== Cards ===== */
+main {
+  padding: 18px 0 38px;
+}
+
+.card {
+  margin: 16px 0;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.panel {
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.panel h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.desc {
+  margin: 0 0 12px;
+  color: rgba(233, 238, 252, 0.8);
+  font-size: 14px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Área de demo ===== */
+.demo-area {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.demo-area.tall {
+  min-height: 220px;
+}
+
+/* ===== Itens ===== */
+.item {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 700;
+}
+
+.item.small {
+  width: 72px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+}
+
+/* ===== Grids base ===== */
+.demo-grid {
+  display: grid;
+  gap: 12px;
+}
+
+/* 1) colunas */
+.cols-fixed {
+  grid-template-columns: 200px 200px 200px;
+}
+
+.cols-fr {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* 2) rows */
+.rows-fixed {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 60px 120px 80px;
+}
+
+/* 2) gap */
+.gap-demo {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* 3) repeat */
+.repeat-demo {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 4) responsivo */
+.responsive-demo {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* 5) posicionamento */
+.position-demo {
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 80px;
+}
+
+.big {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* 6) grid areas */
+.site-layout {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 220px 1fr;
+  grid-template-rows: 70px 160px 70px;
+  grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+}
+
+.site {
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 900;
+  display: grid;
+  place-items: center;
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+/* 7) alinhamentos */
+.content-align-demo {
+  grid-template-columns: repeat(2, 72px);
+  grid-template-rows: repeat(2, 56px);
+
+  /* alinha o "bloco do grid" dentro da área */
+  justify-content: center;
+  align-content: center;
+}
+
+.items-align-demo {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 90px);
+
+  /* alinha o conteúdo nas células */
+  justify-items: center;
+  align-items: center;
+}

@@ -1,0 +1,119 @@
+/*
+==================================================
+DEMO VISUAL
+Alinhamento e Espaçamento
+Autor: Jorge Simões
+==================================================
+*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0f172a;
+  color: white;
+  padding: 40px;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+/* caixas */
+
+.demo div,
+.grid div {
+  background: #38bdf8;
+  padding: 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: black;
+}
+
+/* container flex */
+
+.demo {
+  display: flex;
+  border: 2px dashed #64748b;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* altura para visualizar alinhamento */
+
+.altura {
+  height: 150px;
+}
+
+/* justify-content */
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+/* align-items */
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+/* GRID */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 2px dashed #64748b;
+  padding: 20px;
+}
+
+/* gap */
+
+.gap-demo {
+  gap: 20px;
+}
+
+/* justify-items */
+
+.justify-items {
+  justify-items: center;
+}
+
+/* align-items */
+
+.align-items {
+  align-items: center;
+}
+
+/* justify-self */
+
+.self-center {
+  justify-self: center;
+}
+
+/* align-self */
+
+.self-bottom {
+  align-self: end;
+}

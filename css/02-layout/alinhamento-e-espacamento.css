@@ -1,0 +1,364 @@
+/*
+==================================================
+ALINHAMENTO E ESPAÇAMENTO NO CSS
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/02-layout
+Arquivo: alinhamento-e-espacamento.css
+==================================================
+
+Este arquivo explica as principais propriedades
+de alinhamento e espaçamento usadas em layouts
+modernos com:
+
+• Flexbox
+• CSS Grid
+*/
+
+/*
+==================================================
+1. JUSTIFY-CONTENT
+==================================================
+
+Controla o alinhamento dos itens no eixo principal.
+
+Flexbox:
+eixo principal = horizontal
+
+Grid:
+eixo principal = linha
+*/
+
+.flex-justify {
+  display: flex;
+
+  justify-content: center;
+}
+
+/*
+Valores possíveis:
+
+flex-start
+flex-end
+center
+space-between
+space-around
+space-evenly
+*/
+
+.exemplo-space-between {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+/*
+==================================================
+2. ALIGN-ITEMS
+==================================================
+
+Controla o alinhamento dos itens no eixo cruzado.
+
+Flexbox:
+eixo cruzado = vertical
+*/
+
+.flex-align {
+  display: flex;
+
+  align-items: center;
+}
+
+/*
+Valores comuns:
+
+stretch (padrão)
+flex-start
+flex-end
+center
+baseline
+*/
+
+.exemplo-align-center {
+  display: flex;
+
+  align-items: center;
+}
+
+/*
+==================================================
+3. ALIGN-CONTENT
+==================================================
+
+Controla o alinhamento das linhas dentro do
+container quando existem múltiplas linhas.
+
+Funciona apenas quando:
+
+flex-wrap: wrap
+*/
+
+.flex-align-content {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-content: space-between;
+}
+
+/*
+==================================================
+4. JUSTIFY-ITEMS
+==================================================
+
+Define como os itens se alinham dentro
+das células do Grid.
+
+Funciona principalmente em Grid.
+*/
+
+.grid-justify-items {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  justify-items: center;
+}
+
+/*
+Valores comuns:
+
+start
+end
+center
+stretch
+*/
+
+/*
+==================================================
+5. ALIGN-ITEMS NO GRID
+==================================================
+
+Alinha verticalmente os itens dentro
+das células do grid.
+*/
+
+.grid-align-items {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  align-items: center;
+}
+
+/*
+==================================================
+6. JUSTIFY-SELF
+==================================================
+
+Alinha um item individual dentro do grid.
+*/
+
+.item-justify-self {
+  justify-self: center;
+}
+
+/*
+==================================================
+7. ALIGN-SELF
+==================================================
+
+Permite alinhar um item específico no eixo
+vertical dentro do Grid ou Flexbox.
+*/
+
+.item-align-self {
+  align-self: flex-end;
+}
+
+/*
+==================================================
+8. GAP
+==================================================
+
+Define espaçamento entre linhas e colunas
+em Grid ou Flexbox.
+*/
+
+.grid-gap {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+/*
+gap substitui propriedades antigas como:
+
+grid-gap
+grid-row-gap
+grid-column-gap
+*/
+
+/*
+==================================================
+9. ROW-GAP
+==================================================
+
+Espaçamento apenas entre linhas.
+*/
+
+.grid-row-gap {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  row-gap: 30px;
+}
+
+/*
+==================================================
+10. COLUMN-GAP
+==================================================
+
+Espaçamento apenas entre colunas.
+*/
+
+.grid-column-gap {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  column-gap: 30px;
+}
+
+/*
+==================================================
+11. ESPAÇAMENTO COM MARGIN
+==================================================
+
+Outra forma de criar espaçamento entre elementos
+é utilizando margin.
+*/
+
+.box-margin {
+  margin: 20px;
+}
+
+/*
+==================================================
+12. ESPAÇAMENTO COM PADDING
+==================================================
+
+Padding cria espaço interno dentro
+de um elemento.
+*/
+
+.box-padding {
+  padding: 20px;
+}
+
+/*
+==================================================
+13. COMPARAÇÃO: GAP vs MARGIN
+==================================================
+
+GAP
+
+• funciona em Grid e Flexbox
+• cria espaço entre elementos
+• não afeta as bordas externas
+
+
+MARGIN
+
+• funciona em qualquer elemento
+• cria espaço externo
+• pode causar colapso de margem
+*/
+
+/*
+==================================================
+14. EXEMPLO COMPLETO FLEXBOX
+==================================================
+*/
+
+.container-flex {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+/*
+==================================================
+15. EXEMPLO COMPLETO GRID
+==================================================
+*/
+
+.container-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  justify-items: center;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+/*
+==================================================
+16. BOAS PRÁTICAS
+==================================================
+
+• Use GAP para espaçamento em layouts modernos
+
+• Use justify-content para distribuir espaço
+
+• Use align-items para alinhamento vertical
+
+• Prefira Grid e Flexbox para layouts
+
+• Evite criar layouts apenas com margin
+
+• Combine Flexbox + Grid quando necessário
+*/
+
+/*
+==================================================
+RESUMO
+==================================================
+
+justify-content
+→ distribui espaço no eixo principal
+
+align-items
+→ alinha itens no eixo cruzado
+
+align-content
+→ alinha múltiplas linhas
+
+justify-items
+→ alinha itens dentro da célula (Grid)
+
+justify-self
+→ alinha item individual (Grid)
+
+align-self
+→ alinha item individual
+
+gap
+→ espaço entre elementos
+
+row-gap
+→ espaço entre linhas
+
+column-gap
+→ espaço entre colunas
+*/

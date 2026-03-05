@@ -1,0 +1,352 @@
+/*
+==================================================
+FLEXBOX LAYOUT
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/02-layout
+Arquivo: flexbox.css
+==================================================
+
+Flexbox (Flexible Box Layout) é um sistema de
+layout unidimensional do CSS usado para alinhar
+e distribuir elementos dentro de um container.
+
+Ele trabalha em apenas um eixo por vez:
+
+• eixo principal (main axis)
+• eixo cruzado (cross axis)
+
+Flexbox é ideal para:
+
+• alinhar elementos
+• criar layouts responsivos
+• distribuir espaço automaticamente
+*/
+
+/*
+==================================================
+1. FLEX CONTAINER
+==================================================
+
+Para ativar o Flexbox em um elemento:
+
+display: flex
+*/
+
+.container-flex {
+  display: flex;
+}
+
+/*
+==================================================
+2. DIREÇÃO DOS ITENS
+==================================================
+
+A propriedade flex-direction define
+a direção do eixo principal.
+*/
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/*
+Valores possíveis:
+
+row (padrão)
+row-reverse
+column
+column-reverse
+*/
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/*
+==================================================
+3. JUSTIFY-CONTENT
+==================================================
+
+Controla a distribuição dos itens
+ao longo do eixo principal.
+*/
+
+.flex-justify-center {
+  display: flex;
+  justify-content: center;
+}
+
+.flex-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-space-around {
+  display: flex;
+  justify-content: space-around;
+}
+
+/*
+Valores comuns:
+
+flex-start
+flex-end
+center
+space-between
+space-around
+space-evenly
+*/
+
+/*
+==================================================
+4. ALIGN-ITEMS
+==================================================
+
+Controla o alinhamento dos itens
+no eixo cruzado.
+*/
+
+.flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-align-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-align-end {
+  display: flex;
+  align-items: flex-end;
+}
+
+/*
+==================================================
+5. FLEX-WRAP
+==================================================
+
+Controla se os itens quebram linha.
+*/
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/*
+Valores:
+
+nowrap (padrão)
+wrap
+wrap-reverse
+*/
+
+/*
+==================================================
+6. GAP
+==================================================
+
+Define espaçamento entre os itens.
+*/
+
+.flex-gap {
+  display: flex;
+  gap: 20px;
+}
+
+/*
+==================================================
+7. FLEX-GROW
+==================================================
+
+Define quanto um item pode crescer
+para ocupar espaço disponível.
+*/
+
+.item-grow {
+  flex-grow: 1;
+}
+
+.item-grow-double {
+  flex-grow: 2;
+}
+
+/*
+==================================================
+8. FLEX-SHRINK
+==================================================
+
+Define quanto um item pode encolher
+quando o espaço é insuficiente.
+*/
+
+.item-shrink {
+  flex-shrink: 1;
+}
+
+.item-no-shrink {
+  flex-shrink: 0;
+}
+
+/*
+==================================================
+9. FLEX-BASIS
+==================================================
+
+Define o tamanho inicial de um item.
+*/
+
+.item-basis {
+  flex-basis: 200px;
+}
+
+/*
+==================================================
+10. SHORTHAND FLEX
+==================================================
+
+flex combina:
+
+flex-grow
+flex-shrink
+flex-basis
+*/
+
+.item-flex {
+  flex: 1 1 200px;
+}
+
+/*
+equivalente a:
+
+flex-grow: 1
+flex-shrink: 1
+flex-basis: 200px
+*/
+
+/*
+==================================================
+11. ALIGN-SELF
+==================================================
+
+Permite alinhar um item específico
+diferente dos outros.
+*/
+
+.item-align-self {
+  align-self: center;
+}
+
+/*
+==================================================
+12. ORDER
+==================================================
+
+Permite mudar a ordem visual
+dos elementos no Flexbox.
+*/
+
+.item-ordem1 {
+  order: 1;
+}
+
+.item-ordem2 {
+  order: 2;
+}
+
+.item-ordem3 {
+  order: 3;
+}
+
+/*
+==================================================
+13. EXEMPLO DE LAYOUT COM FLEXBOX
+==================================================
+*/
+
+.layout-flex {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+}
+
+/*
+==================================================
+14. EXEMPLO RESPONSIVO
+==================================================
+*/
+
+.layout-responsivo {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 250px;
+}
+
+/*
+==================================================
+15. BOAS PRÁTICAS
+==================================================
+
+• Use Flexbox para layouts unidimensionais
+
+• Use Grid para layouts bidimensionais
+
+• Use gap em vez de margin para espaçamento
+
+• Combine Flexbox + Grid quando necessário
+
+• Evite usar float para layout moderno
+*/
+
+/*
+==================================================
+RESUMO
+==================================================
+
+display: flex
+ativa flexbox
+
+flex-direction
+define direção do eixo
+
+justify-content
+alinha no eixo principal
+
+align-items
+alinha no eixo cruzado
+
+flex-wrap
+controla quebra de linha
+
+gap
+define espaçamento
+
+flex-grow
+define crescimento
+
+flex-shrink
+define encolhimento
+
+flex-basis
+define tamanho inicial
+
+flex
+atalho para grow + shrink + basis
+
+order
+define ordem visual
+*/

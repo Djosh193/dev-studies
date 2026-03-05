@@ -1,0 +1,357 @@
+/*
+==================================================
+LAYOUT RESPONSIVO NO CSS
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/02-layout
+Arquivo: layout-responsivo.css
+==================================================
+
+Layout responsivo é uma técnica de desenvolvimento
+web que permite que páginas se adaptem a diferentes
+tamanhos de tela:
+
+• celulares
+• tablets
+• notebooks
+• desktops
+• TVs
+
+O objetivo é garantir boa experiência de uso
+em qualquer dispositivo.
+*/
+
+/*
+==================================================
+1. META VIEWPORT (HTML)
+==================================================
+
+Para que layouts responsivos funcionem corretamente,
+é necessário adicionar no HTML:
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+Isso faz o navegador adaptar o layout à largura
+do dispositivo.
+*/
+
+/*
+==================================================
+2. UNIDADES RESPONSIVAS
+==================================================
+
+Unidades recomendadas para layouts responsivos:
+
+%
+vw
+vh
+rem
+em
+fr (Grid)
+
+Evite usar apenas pixels para layouts.
+*/
+
+.box-percent {
+  width: 50%;
+}
+
+.box-vw {
+  width: 50vw;
+}
+
+.box-rem {
+  font-size: 1.2rem;
+}
+
+/*
+==================================================
+3. MEDIA QUERIES
+==================================================
+
+Media Queries permitem aplicar estilos
+dependendo do tamanho da tela.
+*/
+
+.container {
+  padding: 40px;
+}
+
+/*
+--------------------------------------------------
+TABLETS
+--------------------------------------------------
+*/
+
+@media (max-width: 900px) {
+  .container {
+    padding: 20px;
+  }
+}
+
+/*
+--------------------------------------------------
+CELULARES
+--------------------------------------------------
+*/
+
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+/*
+==================================================
+4. LAYOUT RESPONSIVO COM FLEXBOX
+==================================================
+
+Flexbox permite criar layouts que se adaptam
+automaticamente ao espaço disponível.
+*/
+
+.flex-layout {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.card-flex {
+  flex: 1 1 250px;
+}
+
+/*
+==================================================
+5. LAYOUT RESPONSIVO COM GRID
+==================================================
+
+CSS Grid também permite layouts responsivos
+de forma simples.
+*/
+
+.grid-layout {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+/*
+Responsividade com media queries
+*/
+
+@media (max-width: 900px) {
+  .grid-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*
+==================================================
+6. AUTO-FIT E MINMAX
+==================================================
+
+Uma das formas mais modernas de criar
+grids responsivos.
+*/
+
+.grid-auto-fit {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  gap: 20px;
+}
+
+/*
+Explicação:
+
+minmax(200px, 1fr)
+
+mínimo: 200px
+máximo: 1fr
+
+As colunas se ajustam automaticamente.
+*/
+
+/*
+==================================================
+7. IMAGENS RESPONSIVAS
+==================================================
+
+Imagens devem se adaptar ao container.
+*/
+
+.img-responsiva {
+  max-width: 100%;
+
+  height: auto;
+}
+
+/*
+==================================================
+8. CONTAINERS RESPONSIVOS
+==================================================
+*/
+
+.container-centralizado {
+  width: 90%;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+}
+
+/*
+==================================================
+9. TIPOGRAFIA RESPONSIVA
+==================================================
+
+Podemos usar unidades relativas
+para fontes adaptáveis.
+*/
+
+.titulo {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+/*
+clamp(min, preferencial, max)
+
+Isso permite que o texto cresça
+ou diminua conforme a tela.
+*/
+
+/*
+==================================================
+10. ESCALA RESPONSIVA COM FLEX
+==================================================
+*/
+
+.layout-cards {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 300px;
+}
+
+/*
+==================================================
+11. ESCALA RESPONSIVA COM GRID
+==================================================
+*/
+
+.layout-cards-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 20px;
+}
+
+/*
+==================================================
+12. MOBILE FIRST
+==================================================
+
+Uma abordagem recomendada é:
+
+Mobile First
+
+Ou seja:
+
+1️⃣ Criar o layout para celular
+2️⃣ Adaptar para telas maiores
+*/
+
+.container-mobile-first {
+  padding: 10px;
+}
+
+@media (min-width: 768px) {
+  .container-mobile-first {
+    padding: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container-mobile-first {
+    padding: 60px;
+  }
+}
+
+/*
+==================================================
+13. BREAKPOINTS COMUNS
+==================================================
+
+Pequenos dispositivos (celular)
+max-width: 600px
+
+Tablets
+max-width: 900px
+
+Laptops
+max-width: 1200px
+
+Grandes telas
+acima de 1200px
+*/
+
+/*
+==================================================
+14. BOAS PRÁTICAS
+==================================================
+
+• Use Mobile First
+
+• Prefira unidades relativas
+
+• Use Flexbox e Grid
+
+• Evite layouts fixos em pixels
+
+• Use imagens responsivas
+
+• Teste em diferentes dispositivos
+
+• Utilize auto-fit e minmax em grids
+*/
+
+/*
+==================================================
+RESUMO
+==================================================
+
+Media Queries
+→ adaptam layout ao tamanho da tela
+
+Flexbox
+→ layout flexível
+
+Grid
+→ layout bidimensional
+
+auto-fit + minmax
+→ grids responsivos automáticos
+
+clamp()
+→ tipografia responsiva
+
+max-width: 100%
+→ imagens responsivas
+*/

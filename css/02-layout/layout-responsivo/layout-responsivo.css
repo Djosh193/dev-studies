@@ -1,0 +1,257 @@
+/*
+==================================================
+LAYOUT RESPONSIVO (DEMO VISUAL)
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/02-layout
+Arquivo: layout-responsivo-demo.css
+==================================================
+*/
+
+/* ===== Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  line-height: 1.5;
+  background: #0b0f17;
+  color: #e9eefc;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+code {
+  padding: 2px 6px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.muted {
+  color: rgba(233, 238, 252, 0.8);
+}
+
+/* ===== Header / Footer ===== */
+.page-header {
+  padding: 28px 0 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.page-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.page-header p {
+  margin: 6px 0;
+  color: rgba(233, 238, 252, 0.85);
+}
+
+.hint {
+  font-size: 14px;
+  color: rgba(233, 238, 252, 0.7);
+}
+
+.page-footer {
+  margin-top: 26px;
+  padding: 18px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(233, 238, 252, 0.7);
+}
+
+/* ===== Cards ===== */
+main {
+  padding: 18px 0 38px;
+}
+
+.card {
+  margin: 16px 0;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+}
+
+.card h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+.panel {
+  padding: 14px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+}
+
+.panel h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+}
+
+.desc {
+  margin: 0 0 12px;
+  color: rgba(233, 238, 252, 0.8);
+  font-size: 14px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+@media (min-width: 900px) {
+  .grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ===== Demo area ===== */
+.demo-area {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ===== 1) Unidades ===== */
+.box {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 800;
+}
+
+.percent {
+  width: 50%;
+}
+
+.vw {
+  width: 50vw;
+}
+
+/* ===== 2) clamp ===== */
+.fluid-title {
+  margin: 0 0 6px;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+/* ===== 3) Mobile first ===== */
+.mobile-first-box {
+  padding: 10px; /* base (mobile) */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* tablet/desktop */
+@media (min-width: 768px) {
+  .mobile-first-box {
+    padding: 24px;
+  }
+}
+
+/* telas grandes */
+@media (min-width: 1200px) {
+  .mobile-first-box {
+    padding: 40px;
+  }
+}
+
+/* ===== 4) Flex responsivo ===== */
+.flex-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.card-item {
+  flex: 1 1 240px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 900;
+}
+
+/* ===== 5) Grid com media queries ===== */
+.grid-media {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+@media (max-width: 900px) {
+  .grid-media {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-media {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tile {
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 900;
+  text-align: center;
+}
+
+/* ===== 6) auto-fit + minmax ===== */
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+/* ===== 7) Imagem responsiva ===== */
+.img-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== 8) Container responsivo ===== */
+.container-demo {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.bar {
+  margin-top: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(233, 238, 252, 0.35);
+}
