@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display e Position | Dev-Studies</title>
+    <link rel="stylesheet" href="display-e-position.css" />
+  </head>
+
+  <body>
+    <header class="page-header">
+      <div class="container">
+        <h1>Display e Position</h1>
+        <p>
+          Visualizador prático para entender <code>display</code> e
+          <code>position</code> no CSS.
+        </p>
+        <p class="hint">
+          Dica: abra o DevTools (F12) e inspecione os elementos.
+        </p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- ===================== DISPLAY ===================== -->
+      <section class="card" id="display">
+        <h2>1) Display</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>display: block</h3>
+            <p class="desc">
+              Quebra linha e ocupa a largura disponível. Aceita width/height.
+            </p>
+
+            <div class="demo-wrap">
+              <div class="label">Blocos (block)</div>
+              <div class="demo-area">
+                <div class="demo-box block">Block 1</div>
+                <div class="demo-box block">Block 2</div>
+                <div class="demo-box block">Block 3</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>display: inline</h3>
+            <p class="desc">
+              Não quebra linha e ocupa só o conteúdo.
+              <b>Width/height não se aplicam.</b>
+            </p>
+
+            <div class="demo-wrap">
+              <div class="label">
+                Inline (observe que width/height “não pegam”)
+              </div>
+              <div class="demo-area">
+                <span class="demo-pill inline">Inline A</span>
+                <span class="demo-pill inline">Inline B</span>
+                <span class="demo-pill inline">Inline C</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>display: inline-block</h3>
+            <p class="desc">
+              Fica em linha, mas aceita width/height, margin e padding.
+            </p>
+
+            <div class="demo-wrap">
+              <div class="label">Inline-block (tamanhos respeitados)</div>
+              <div class="demo-area">
+                <span class="demo-pill inline-block">IB 1</span>
+                <span class="demo-pill inline-block">IB 2</span>
+                <span class="demo-pill inline-block">IB 3</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>display: none</h3>
+            <p class="desc">
+              Remove o elemento da página (não aparece e não ocupa espaço).
+            </p>
+
+            <div class="demo-wrap">
+              <div class="label">O elemento do meio está em display:none</div>
+              <div class="demo-area">
+                <span class="demo-pill inline-block">Visível 1</span>
+                <span class="demo-pill inline-block none">Não aparece</span>
+                <span class="demo-pill inline-block">Visível 2</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <hr class="divider" />
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>display: flex</h3>
+            <p class="desc">
+              Layout unidimensional. Alinha e distribui itens com facilidade.
+            </p>
+
+            <div class="demo-wrap">
+              <div class="label">Flex: justify-content: space-between</div>
+              <div class="demo-area flex">
+                <div class="demo-box">1</div>
+                <div class="demo-box">2</div>
+                <div class="demo-box">3</div>
+              </div>
+            </div>
+
+            <div class="demo-wrap">
+              <div class="label">
+                Flex: justify-content: center + align-items: center
+              </div>
+              <div class="demo-area flex flex-center">
+                <div class="demo-box">A</div>
+                <div class="demo-box">B</div>
+                <div class="demo-box">C</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>display: grid</h3>
+            <p class="desc">
+              Layout bidimensional (linhas e colunas). Ótimo para grids.
+            </p>
+
+            <div class="demo-wrap">
+              <div class="label">Grid: 3 colunas (1fr 1fr 1fr)</div>
+              <div class="demo-area grid">
+                <div class="demo-box">1</div>
+                <div class="demo-box">2</div>
+                <div class="demo-box">3</div>
+                <div class="demo-box">4</div>
+                <div class="demo-box">5</div>
+                <div class="demo-box">6</div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== POSITION ===================== -->
+      <section class="card" id="position">
+        <h2>2) Position</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>position: static (padrão)</h3>
+            <p class="desc">
+              Segue o fluxo normal. <code>top/left</code> não funcionam.
+            </p>
+
+            <div class="demo-wrap">
+              <div class="label">Static (top/left ignorados)</div>
+              <div class="pos-area">
+                <div class="pos-box static">Static</div>
+                <div class="pos-note">
+                  Mesmo com <code>top/left</code> no CSS, ele não sai do lugar.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>position: relative</h3>
+            <p class="desc">
+              Move em relação à posição original
+              <b>sem perder o espaço no fluxo</b>.
+            </p>
+
+            <div class="demo-wrap">
+              <div class="label">
+                Relative (deixa “fantasma” no lugar original)
+              </div>
+              <div class="pos-area">
+                <div class="pos-box relative">
+                  Relative
+                  <span class="tag">top: 12px; left: 16px</span>
+                </div>
+                <div class="pos-note">
+                  Repare que o espaço original continua existindo.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>position: absolute</h3>
+            <p class="desc">
+              Sai do fluxo e posiciona relativo ao ancestral “posicionado” (o
+              primeiro pai com <code>position</code> diferente de
+              <code>static</code>).
+            </p>
+
+            <div class="demo-wrap">
+              <div class="label">Absolute dentro de um container relative</div>
+              <div class="pos-area pos-parent">
+                <div class="pos-box absolute">
+                  Absolute
+                  <span class="tag">top: 12px; right: 12px</span>
+                </div>
+                <div class="pos-note">
+                  O pai tem <code>position: relative</code>, então o absolute
+                  usa ele como referência.
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>position: fixed</h3>
+            <p class="desc">Fica preso na tela durante o scroll.</p>
+
+            <div class="demo-wrap">
+              <div class="label">
+                Veja o botão fixo no canto inferior direito
+              </div>
+              <div class="pos-area">
+                <div class="pos-note">
+                  Role a página e observe o botão “FIXED” continuar na mesma
+                  posição.
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <article class="panel">
+          <h3>position: sticky</h3>
+          <p class="desc">
+            Age como <code>relative</code> até atingir um limite e então “gruda”
+            como <code>fixed</code>.
+          </p>
+
+          <div class="demo-wrap">
+            <div class="label">Sticky (role e veja a barra grudar no topo)</div>
+            <div class="sticky-demo">
+              <div class="sticky-bar">
+                Eu sou sticky (top: 0). Role essa área 👇
+              </div>
+
+              <div class="sticky-content">
+                <p>Conteúdo 1</p>
+                <p>Conteúdo 2</p>
+                <p>Conteúdo 3</p>
+                <p>Conteúdo 4</p>
+                <p>Conteúdo 5</p>
+                <p>Conteúdo 6</p>
+                <p>Conteúdo 7</p>
+                <p>Conteúdo 8</p>
+                <p>Conteúdo 9</p>
+                <p>Conteúdo 10</p>
+                <p>Conteúdo 11</p>
+                <p>Conteúdo 12</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h3>z-index (sobreposição)</h3>
+          <p class="desc">
+            Controla quem fica por cima. Funciona em elementos posicionados.
+          </p>
+
+          <div class="demo-wrap">
+            <div class="label">z-index: 1 vs 2</div>
+            <div class="z-area">
+              <div class="z-box z1">z-index: 1</div>
+              <div class="z-box z2">z-index: 2</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="card" id="extras">
+        <h2>3) Extras úteis</h2>
+
+        <div class="grid-2">
+          <article class="panel">
+            <h3>visibility: hidden (comparação)</h3>
+            <p class="desc">
+              Diferente de <code>display: none</code>, aqui o elemento some, mas
+              <b>continua ocupando espaço</b>.
+            </p>
+
+            <div class="demo-wrap">
+              <div class="label">Hidden ocupa espaço</div>
+              <div class="demo-area">
+                <span class="demo-pill inline-block">Visível 1</span>
+                <span class="demo-pill inline-block hidden">Hidden</span>
+                <span class="demo-pill inline-block">Visível 2</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <h3>Checklist rápido</h3>
+            <ul class="checklist">
+              <li><b>Layout</b>: prefira Flex/Grid.</li>
+              <li>
+                <b>position</b>: use quando precisar “soltar” algo do fluxo.
+              </li>
+              <li>
+                <b>absolute</b>: garanta um pai <code>relative</code> como
+                referência.
+              </li>
+              <li><b>fixed</b>: bom pra botões/menus flutuantes.</li>
+              <li><b>sticky</b>: perfeito pra headers que grudam ao rolar.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <a
+      class="fixed-btn"
+      href="#display"
+      aria-label="Voltar para o topo de Display"
+    >
+      FIXED
+    </a>
+
+    <footer class="page-footer">
+      <div class="container">
+        <small>Dev-Studies • Autor: Jorge Simões</small>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,371 @@
+/*
+==================================================
+DISPLAY E POSITION NO CSS
+Autor: Jorge Simões
+Repositório: dev-studies
+Diretório: css/01-fundamentos
+==================================================
+*/
+
+/*
+==================================================
+1. PROPRIEDADE DISPLAY
+==================================================
+
+A propriedade display define como um elemento é
+renderizado na página e como ele participa do
+fluxo do layout.
+
+Sintaxe:
+
+elemento {
+  display: valor;
+}
+
+Valores mais comuns:
+
+block
+inline
+inline-block
+none
+flex
+grid
+*/
+
+/*
+--------------------------------------------------
+display: block
+--------------------------------------------------
+
+Elementos block:
+
+- ocupam toda largura disponível
+- quebram linha automaticamente
+- aceitam width e height
+- aceitam margin e padding
+
+Elementos block comuns:
+
+div
+section
+article
+header
+footer
+p
+h1 até h6
+*/
+
+.exemplo-block {
+  display: block;
+  width: 200px;
+  height: 80px;
+  background: lightblue;
+  margin: 10px;
+}
+
+/*
+--------------------------------------------------
+display: inline
+--------------------------------------------------
+
+Elementos inline:
+
+- não quebram linha
+- ocupam apenas o espaço do conteúdo
+- não aceitam width e height
+- margin vertical não funciona corretamente
+
+Elementos inline comuns:
+
+span
+a
+strong
+em
+*/
+
+.exemplo-inline {
+  display: inline;
+  width: 200px; /* não terá efeito */
+  height: 80px; /* não terá efeito */
+  background: lightcoral;
+}
+
+/*
+--------------------------------------------------
+display: inline-block
+--------------------------------------------------
+
+Combina características de inline e block.
+
+- não quebra linha
+- aceita width e height
+- aceita margin e padding
+*/
+
+.exemplo-inline-block {
+  display: inline-block;
+  width: 150px;
+  height: 80px;
+  background: lightgreen;
+  margin: 5px;
+}
+
+/*
+--------------------------------------------------
+display: none
+--------------------------------------------------
+
+Remove completamente o elemento do layout.
+
+- não aparece na página
+- não ocupa espaço
+*/
+
+.exemplo-none {
+  display: none;
+}
+
+/*
+--------------------------------------------------
+display: flex
+--------------------------------------------------
+
+Ativa o Flexbox.
+
+Flexbox é um sistema moderno de layout usado
+para alinhar elementos e distribuir espaço.
+
+*/
+
+.container-flex {
+  display: flex;
+
+  /* alinhamento horizontal */
+  justify-content: space-between;
+
+  /* alinhamento vertical */
+  align-items: center;
+
+  gap: 10px;
+}
+
+/*
+--------------------------------------------------
+display: grid
+--------------------------------------------------
+
+Ativa o CSS Grid.
+
+Grid permite criar layouts bidimensionais
+(linhas e colunas).
+*/
+
+.container-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  gap: 10px;
+}
+
+/*
+==================================================
+2. PROPRIEDADE POSITION
+==================================================
+
+A propriedade position define como um elemento
+é posicionado dentro do documento.
+
+Valores:
+
+static
+relative
+absolute
+fixed
+sticky
+*/
+
+/*
+--------------------------------------------------
+position: static
+--------------------------------------------------
+
+Valor padrão do CSS.
+
+- segue o fluxo normal do documento
+- top, left, right, bottom não funcionam
+*/
+
+.exemplo-static {
+  position: static;
+}
+
+/*
+--------------------------------------------------
+position: relative
+--------------------------------------------------
+
+Move o elemento em relação à sua posição original.
+
+- mantém o espaço original no layout
+- permite usar top, left, right, bottom
+*/
+
+.exemplo-relative {
+  position: relative;
+
+  top: 20px;
+  left: 20px;
+}
+
+/*
+--------------------------------------------------
+position: absolute
+--------------------------------------------------
+
+Remove o elemento do fluxo normal.
+
+Ele é posicionado em relação ao primeiro
+elemento pai que tenha:
+
+position: relative | absolute | fixed | sticky
+*/
+
+.container-relative {
+  position: relative;
+}
+
+.exemplo-absolute {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+}
+
+/*
+--------------------------------------------------
+position: fixed
+--------------------------------------------------
+
+O elemento fica fixo na tela.
+
+Mesmo quando a página rola (scroll),
+ele permanece no mesmo lugar.
+*/
+
+.exemplo-fixed {
+  position: fixed;
+
+  bottom: 20px;
+  right: 20px;
+}
+
+/*
+--------------------------------------------------
+position: sticky
+--------------------------------------------------
+
+Mistura de relative + fixed.
+
+O elemento:
+
+- se comporta como relative
+- ao atingir um limite no scroll
+  passa a se comportar como fixed
+*/
+
+.exemplo-sticky {
+  position: sticky;
+
+  top: 0;
+
+  background: yellow;
+}
+
+/*
+==================================================
+3. PROPRIEDADES DE POSICIONAMENTO
+==================================================
+
+Essas propriedades funcionam quando position
+não é static.
+
+top
+bottom
+left
+right
+*/
+
+.exemplo-posicao {
+  position: absolute;
+
+  top: 50px;
+  left: 30px;
+}
+
+/*
+==================================================
+4. Z-INDEX
+==================================================
+
+Controla a sobreposição de elementos.
+
+Quanto maior o valor do z-index,
+mais "na frente" o elemento aparece.
+
+Funciona apenas em elementos posicionados.
+*/
+
+.caixa1 {
+  position: absolute;
+  z-index: 1;
+}
+
+.caixa2 {
+  position: absolute;
+  z-index: 2;
+}
+
+/*
+==================================================
+5. FLUXO NORMAL VS FORA DO FLUXO
+==================================================
+
+Elementos que permanecem no fluxo:
+
+static
+relative
+sticky
+
+Elementos fora do fluxo:
+
+absolute
+fixed
+
+Quando um elemento sai do fluxo,
+ele deixa de influenciar o layout
+dos elementos ao redor.
+*/
+
+/*
+==================================================
+6. BOAS PRÁTICAS
+==================================================
+
+• Use Flexbox e Grid para layouts modernos
+
+• Evite usar muitos elementos com
+  position: absolute
+
+• Use position: relative como referência
+  para elementos absolute
+
+• Use fixed para elementos como:
+
+  - botões flutuantes
+  - menus fixos
+  - barras de navegação
+
+• Use sticky para cabeçalhos que
+  permanecem visíveis no scroll
+*/
